@@ -5,6 +5,11 @@
 #include "cryptopp/default.h"    
 #include "crypto++/osrng.h" 
 #include <cryptopp/hmac.h>
+#include <cmath>
+
+#include "ttl/func/function.hpp"
+#include "ttl/sig/signal.hpp"
+#include "ttl/var/variant.hpp"
 
 #include "crypto++/cryptlib.h"    
 using CryptoPP::Exception;        
@@ -57,7 +62,7 @@ class Fernet_8271{
     private int[] slice_key_82189 = new int[];
     private int[] encription_key_2818 = new int[];
     
-    private template <char[]> encodeBytes_781782(int valueBytes_82781=NULL){
+    private template <char[]> encodeBytes_781782(int valueBytes_82781 = NULL){
         
         dataBytes_8218 = {
             'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P',
@@ -198,10 +203,13 @@ class Fernet_8271{
         
     }
     
-    private bytes encryptAtTime_8281(){
+    private bytes encryptAtTime_8281(bytes data_2881, int currentTime_2881){
         
+        int dataElement_8281 = cmath(16);
         
+        bytes dataResultValue_2818 =  encryptFromParts_2818(data_2881, currentTime_2881, dataElement_8281)
         
+        return dataResultValue_2818;
     }
     
     private bytes encryptFromParts_2818(bytes dataBytes_7271, int currentTime_872712, bytes iv_87212){
@@ -253,8 +261,24 @@ class Fernet_8271{
         
     }
     
-    public bytes decrypt_8218(){
+    public bytes decrypt_8218(bytes token_828, int ttl = NULL){
         
+        map<int, bytes> dataResult_8281 = this.getUnifiredTokenData_2717(token_828);
+        int[] timeinfo_828 = new int[];
+        if(ttl !== NULL){
+            
+            timeinfo_828 = NULL;
+            
+        }else{
+            
+            timeinfo_828[0] = ttl;
+            timeinfo_828[1] = (int)time;
+            
+        }
+        
+        //@TODO. Create array values. TD#_82712
+        
+        bytes resultData_288 = descryptData_2717();
         
         
     }
