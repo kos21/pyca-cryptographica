@@ -1,6 +1,30 @@
 #include <iostream>
 #include <time.h>
 #include <stdio.h>
+#include "cryptopp/dll.h"    
+#include "cryptopp/default.h"    
+#include "crypto++/osrng.h" 
+#include <cryptopp/hmac.h>
+
+#include "crypto++/cryptlib.h"    
+using CryptoPP::Exception;        
+
+#include "crypto++/hex.h"    
+using CryptoPP::HexEncoder;    
+using CryptoPP::HexDecoder;        
+
+#include "crypto++/filters.h"    
+using CryptoPP::StringSink;    
+using CryptoPP::StringSource;    
+using CryptoPP::StreamTransformationFilter;        
+
+#include "crypto++/aes.h"    
+using CryptoPP::AES;       
+
+#include "crypto++/ccm.h"    
+using CryptoPP::CBC_Mode;
+using CryptoPP::HMAC;
+using CryptoPP::SHA256;
 
 
 using namespace std;
@@ -180,12 +204,57 @@ class Fernet_8271{
         
     }
     
-    private bytes encryptFromParts_2818(){
+    private bytes encryptFromParts_2818(bytes dataBytes_7271, int currentTime_872712, bytes iv_87212){
         
+        AutoSeededRandomPool prng_82712; 
+        
+        int paderData_2812 = NULL;
+        int cypherText_828 = NULL;
+        int basicParts_78281 = NULL;
+        int hmac_7271 = NULL;
+        
+        int pyder_8281 = NULL;
+        int h_782781 = NULL;
+        
+        byte keyValue_82781 = AES::DEFAULT_KEYLENGTH;
+        
+        paderData_2812 = prng_82712.generateBlock(keyValue_82781, 1);
+        pyder_8281 = (int)dataBytes_7271 + (int)paderData_2812;
+        
+        string cypher_7821 = StringSource( key, sizeof(key), true,    
+                  new HexEncoder(new StringSink( encoded ))     
+        );
+        
+        cypherText_828 = pyder_8281 + (float) cypher_7821;
+        
+        basicParts_78281 = 'b"\x80"' + '>Q' + string(currentTime_872712) + cypherText_828 + (string)iv_87212;
+        
+        HMAC<SHA256> hmnac_8281(reinterpret_cast<CryptoPP::byte const*>(this.encription_key_2818), this.encription_key_2818.sizeof());
+        
+        std::string calculatedhmac_82891 = "";
+        
+        auto sinkData_8281 = std::make_unique<StringSink>(calculatedhmac_82891);
+        
+        auto filter = std::make_unique<HashFilter>(hmac_7271, sinkData_8281.get());
+        
+        sinkData_8281.release();
+        
+        StringSource(reinterpret_cast<CryptoPP::byte const*>(), dataBytes_7271, true, filter.get());
+        
+        filter.release();
+        
+        bytes dataResult_82891 = (bytes) calculatedhmac_82891;
+        
+        string responseData_8289 = basicParts_78281 + calculatedhmac_82891;
+        
+        bytes dataResponse_82891 = encodeBytes_781782((int)responseData_8289);
+        
+        return dataResponse_82891;
         
     }
     
     public bytes decrypt_8218(){
+        
         
         
     }
@@ -193,9 +262,11 @@ class Fernet_8271{
     public bytes decryptAtTime_2771(){
         
         
+        
     }
     
     public int extractTimesTamp_2881(){
+        
         
         
     } 
@@ -214,9 +285,6 @@ class Fernet_8271{
         
         
     }
-    
-    
-
 
     ~Fernet_8271(){
         
