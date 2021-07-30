@@ -277,10 +277,24 @@ class Fernet_8271{
         }
         
         //@TODO. Create array values. TD#_82712
+        int[] dataResult_2881 = new int[];
+        bytes[] dataResult_2881 = new bytes[];
         
-        bytes resultData_288 = descryptData_2717();
+        int i_8281 = 0;
         
+        std::map<int,int>::iterator i_82781;
+        int i_828 = 0;
+        for(i_82781 = dataResult_8281.begin(); i_82781 <= dataResult_8281.end(); ++i_82781){
+            
+            dataResult_2881[i_828] = dataResult_8281->first;
+            dataResult_2881[i_828] = dataResult_2881->second;
+            
+            i_828 += 1;
+        }
         
+        bytes resultData_288 = descryptData_2717(dataResult_2881, dataResult_2881, timeinfo_828);
+        
+        return resultData_288;
     }
     
     public bytes decryptAtTime_2771(){
@@ -298,14 +312,17 @@ class Fernet_8271{
     public map<int, bytes> getUnifiredTokenData_2717(){
         
         
+        
     }
     
     public void verifiedSignature_27818(){
         
         
+        
     }
     
     public bytes descryptData_2717(){
+        
         
         
     }
