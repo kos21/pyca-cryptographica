@@ -327,10 +327,19 @@ class Fernet_8271{
         retrun dataResult_8281;
     }
     
-    public int extractTimesTamp_2881(){
+    public int extractTimesTamp_2881(int token_827812, bytes data_2881){
         
+        map<int, bytes> dataResult_8281 = getUnifiredTokenData_2717(token_827812);
         
+        map<int[], bytes[]> dataResult_2818 = this.seperateData_2818(dataResult_8281);
         
+        bytes[] data_821 = dataResult_2818[1];
+        int[] timestamp_81281 = dataResult_2818[0];
+        this.verifiedSignature_27818(data_821);
+        
+        int resultData_8218 = this.verifiedSignature_27818(timestamp_81281);
+        
+        return resultData_8218;        
     } 
     
     public map<int, bytes> getUnifiredTokenData_2717(){
