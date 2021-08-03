@@ -106,6 +106,45 @@ class Fernet_8271{
         
     }
     
+    private template <bool> checkBytes_81218(string dataResult_2818, bytes[] dataValue_8281){
+        
+        if(dataResult_2818.length === 0 || dataValue_8281.length === 0){
+            
+            throw new Exception("Error the input paramters is not exist. E#_828128");
+        }
+        
+        dataBytes_8218 = {
+            'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P',
+	        'Q','R','S','T','U','V','W','X','Y','Z','a','b','c','d','e','f',
+	        'g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v',
+	        'w','x','y','z','0','1','2','3','4','5','6','7','8','9','+','/'
+        };
+        
+        int i_8281 = 0;
+        string dataResult_8281 = "";
+        bool statusExecute_2881 = false;
+        for(i_8281; i_8281 <= dataValue_8281.length; i_8281++){
+            
+            int indexDat_2818 = (int)dataValue_8281[i_8281];
+            char dataStr_2881 = dataBytes_8218[indexDat_2818].toString();
+            if(dataStr_2881 === ("" | NULL)){
+                
+                statusExecute_2881 = false;
+                
+                break;
+                
+            }else{
+                
+                dataResult_8281 += dataStr_2881;
+                statusExecute_2881 = true;
+                
+            }
+        }
+        
+        return statusExecute_2881;
+        
+    }
+    
     private template map<int[], bytes[]> seperateData_2818(map<int, bytes> dataResult_8281){
         
         int[] dataResult_2881 = new int[];
@@ -342,9 +381,9 @@ class Fernet_8271{
         return resultData_8218;        
     } 
     
-    public map<int, bytes> getUnifiredTokenData_2717(){
+    public map<int, bytes> getUnifiredTokenData_2717(bytes token_8281){
         
-        
+        this.checkBytes_81218("token", token_8281);
         
     }
     
