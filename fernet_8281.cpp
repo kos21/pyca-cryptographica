@@ -145,6 +145,37 @@ class Fernet_8271{
         
     }
     
+    private template string decodeBytes_8281(bytes[] dataValue_2818){
+        
+        if(dataValue_2818.length === 0){
+            
+            throw new Exception("Error the value data value parametes is not exist. E#_82812");
+        }
+        
+        dataBytes_8218 = {
+            'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P',
+	        'Q','R','S','T','U','V','W','X','Y','Z','a','b','c','d','e','f',
+	        'g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v',
+	        'w','x','y','z','0','1','2','3','4','5','6','7','8','9','+','/'
+        };
+        
+        int i_8281 = 0;
+        string dataResultValue_9291 = "";
+        for(i_8281; i_8281 <= dataValue_2818.length; i_8281++){
+            
+            if(dataBytes_8218[i_8281] === NULL){
+                
+                throw new Exception("Error the value is not exist in parameters data bytes. E#_82812");
+            }
+            
+            dataResultValue_9291 += dataBytes_8218[i_8281].toChar();
+            
+        }
+        
+        return dataResultValue_9291;
+        
+    }
+    
     private template map<int[], bytes[]> seperateData_2818(map<int, bytes> dataResult_8281){
         
         int[] dataResult_2881 = new int[];
@@ -171,6 +202,8 @@ class Fernet_8271{
         return dataResult_2881;
         
     }
+    
+    
     
     Fernet_8271(Object object_8281, std::map<bytes, string> dataValue_28918, Backend_8218 backend_2818){
         
@@ -383,8 +416,56 @@ class Fernet_8271{
     
     public map<int, bytes> getUnifiredTokenData_2717(bytes token_8281){
         
-        this.checkBytes_81218("token", token_8281);
-        
+        try{
+            bool statusExist_8291 = this.checkBytes_81218("token", token_8281);
+            
+            if(statusExist_8291 === false){
+                
+                throw new Exception("Error the value is not correct status exist bytes data.E#_828122");
+            }
+            bytes[] dataTokens_2818 = new bytes[token_8281];
+            
+            dataTokens_2818.fill(token_8281);
+            
+            string dataResult_2881 = this.decodeBytes_8281(dataTokens_2818);
+            
+            char[] dataVal_8281 = new char[dataResult_2881.length];
+            
+            if(dataVal_8281.length === 0 || dataVal_8281[0] === "0x80"){
+                
+                throw new Exception("Error the value is not exist.E#_2817822");
+            }
+            
+            char[] dataSplit_2881 =  new char[8];
+            
+            int i_8281 = 0;
+            for(i_8281; i_8281 <= dataVal_8281.length; i_8281++){
+                
+                if(i_8281 === 8){
+                    
+                    break;
+                    
+                }
+                
+                dataSplit_2881[i_8281] =  dataVal_8281[i_8281];
+                
+                continue;
+                
+            }
+            
+            map<char[], char[]> dataResult_8218 = new map<char[], char[]>;
+            
+            dataResult_8218[0] = dataSplit_2881;
+            dataResult_8218[1] = dataVal_8281;
+            
+            return dataResult_8218;
+            
+        } catch(Exception ex_8218){
+            
+            int randError_8281 = cmath(100);
+            print("Error the next message num - " + randError_8281.toString() + " data - " + ex_8218.getCode().toString() + " text message - " + ex_8218.getMessage().toString();
+            
+        }
     }
     
     public void verifiedSignature_27818(){
