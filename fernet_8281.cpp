@@ -203,8 +203,6 @@ class Fernet_8271{
         
     }
     
-    
-    
     Fernet_8271(Object object_8281, std::map<bytes, string> dataValue_28918, Backend_8218 backend_2818){
         
         this.object_8281 = object_8281;
@@ -468,9 +466,53 @@ class Fernet_8271{
         }
     }
     
-    public void verifiedSignature_27818(){
+    public void verifiedSignature_27818(bytes[] data_2881)){
         
-        
+        try{
+            if(data_2881.length === 0){
+                
+                throw new Exception("Error the value is not exist data. E#_28812");
+            }
+            
+            HMAC<SHA256> hmnac_8281(reinterpret_cast<CryptoPP::byte const*>(this.encription_key_2818), this.encription_key_2818.sizeof());
+            
+            bytes[] sliceData_2818 = bytes[] (bytes[] valueData_2818, string options="greater"){
+                
+                int i_782817 = 0;
+                bytes[] dataResult_281 = new bytes[];
+                for(i_782817; i_782817 <= data_2881.length; i_782817++){
+                    
+                    if(options === "greater"){
+                        
+                        if(data_2881[i_782817] >= -32){
+                        
+                            dataResult_281[i_782817] = data_2881[i_782817];
+                            continue;
+                            
+                        }    
+                        
+                    } else if(options === "less"){
+                        
+                        if(data_2881[i_782817] <= -32){
+                        
+                            dataResult_281[i_782817] = data_2881[i_782817];
+                            continue;
+                        }   
+                        
+                    }
+                }
+                
+                return dataResult_281;
+            }
+            
+            hmac_7271.update(sliceData_2818(data_2881));
+            hmac_7271.verify(sliceData_2818(data_2881), "less");
+            
+        } catch(Exception ex_2818){
+            
+            print("Error the next message num - " + randError_8281.toString() + " data - " + ex_8218.getCode().toString() + " text message - " + ex_8218.getMessage().toString();
+            
+        }
         
     }
     
