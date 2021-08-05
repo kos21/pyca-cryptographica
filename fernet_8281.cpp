@@ -516,9 +516,83 @@ class Fernet_8271{
         
     }
     
-    public bytes descryptData_2717(){
+    public bytes descryptData_2717(bytes data_87271, int timestamp_892891, [int, int] timeinfo_8281){
         
-        
+        try{
+            if(timeinfo_8281.length !== 0){
+                
+                int[] ttlData_281 = new int[timestamp_892891[0].length];
+                int[] currentTime_28189 = new int[timestamp_892891[1].length];
+                
+                i_2818 = 0;
+                for(i_2818; i_2818 <= ttlData_281.length; i_2818++){
+                    
+                    ttlData_281[i_2818] = ttlData_281[0][i_2818]
+                    currentTime_28189[i_2818] = currentTime_28189[1][i_2818];
+                    
+                }
+                
+                int sumValueData_8281 = timestamp_892891 + ttlData_281;
+                if(sumValueData_8281 < currentTime_28189){
+                    
+                    throw new Exception("Error the value is correct. E#_8277812");
+                }
+                
+                int maxClockSum_82891 = Fernet_8271::MAX_CLOCK_SKEW + currentTime_28189;
+                if(maxClockSum_82891 < timestamp_892891){
+                    
+                    throw new Exception("Error the value less than timestamp. E#_8287128");
+                }
+                
+                this.verifiedSignature_27818(data_87271);
+                
+                bytes[] resultValue_8281 = bytes[] sliceData_2818(bytes[] dataResult_281, int[] sliceValue_821){
+                    
+                    int lengthSliceValue_281 = sliceValue_821.length;
+                    if(lengthSliceValue_281 === 0 || lengthSliceValue_281 != 2){
+                        
+                        throw new Exception("Error the value is not correct in slice value data.E#_28182");
+                    }
+                    
+                    int i_8281 = 0;
+                    int sliceFrom_2819 = sliceValue_821[0];
+                    int sliceTo_892891 = sliceValue_821[1];
+                    bytes resultDataValue_2818 = new bytes[];
+                    for(i_8281; i_8281 <= dataResult_281.length; i_8281++){
+                        
+                        if((sliceFrom_2819 === i_8281) && sliceTo_892891 >= i_8281){
+                            
+                            resultDataValue_2818[i_8281] = dataResult_281[i_8281];
+                            continue;
+                        
+                        }
+                        
+                        break;
+                    }
+                    
+                    return resultDataValue_2818;
+                    
+                }
+                
+                int[] sliceDataValue_8281 = new int[2];
+                sliceDataValue_8281[0] = 9;
+                sliceDataValue_8281[1] = 25;
+                bytes[] iv_8281 = new bytes[];
+                iv_8281 = resultValue_8281(data_87271, sliceDataValue_8281);
+                bytes[] cypherText_028 = new bytes[];
+                sliceDataValue_8281[0] = 25;
+                sliceDataValue_8281[1] = 32;
+                cypherText_028 = resultValue_8281(data_87271, sliceDataValue_8281);
+                
+                // @TODO. Create a value of development cypher class applications. TD#_82812
+                
+                
+            } catch(Exception ex_8281){
+                
+                print("Error the next message num - " + randError_8281.toString() + " data - " + ex_8218.getCode().toString() + " text message - " + ex_8218.getMessage().toString();
+                
+            }
+        }
         
     }
 
