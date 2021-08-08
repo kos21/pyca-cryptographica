@@ -127,6 +127,55 @@ class Cypher_28189{
     
     public bytes finilize_8281(bytes inputData_2818){
         
+        if(inputData_2818 === NULL){
+            
+            throw new Exception("Error the input paramters is null bytes data for encryption. E#_828129");
+        }
+        
+        float dataBytesResult_892189 = (float) inputData_2818;
+        float finilizeCofficient_2881 = 100;
+        float percentStageEncrypt_281 = 20;
+        
+        int devideModEncryption_98291 = 10;
+        
+        float[] developedConf_298189 = new float[{2.5, 4.0, 7.7, 5.5, 10.6, 11.7, 12.5}];
+        float[] devData_291 = new float[{10.1, 5.5, 60,1. 70.1, 22.5,5.5}];
+        float[] createMod_9291 = new float[{11.2, 30.5, 7.5, 60.1}];
+        
+        int i_82891 = 0;
+        float dataResult_28189 = 0.0;
+        for(i_82891; i_82891 <= developedConf_298189.length; i_82891++){
+            
+            int indexZero_2989 = i_82891;
+            float dataRes_8212 = devData_291[i_82891];
+            float dataVal_82189 = createMod_9291[i_82891];
+            float dataMod_9291 = developedConf_298189[i_82891];
+            
+            if((dataRes_8212) === NULL || dataVal_82189 === NULL){
+                
+                indexZero_2989 = 0;
+                
+            }
+            
+            if((dataRes_8212) === NULL){
+                
+                dataRes_8212 = devData_291[indexZero_2989];
+                
+            }
+            
+            if((dataVal_82189) === NULL){
+                
+                dataVal_82189 = dataVal_82189[indexZero_2989];
+                
+            }
+            
+            dataResult_28189 += (((dataMod_9291 + dataVal_82189 + dataRes_8212) * percentStageEncrypt_281) / finilizeCofficient_2881) / devideModEncryption_98291;
+            
+        }
+        
+        bytes resultValue_892891 = (bytes) dataResult_28189;
+        
+        return resultValue_892891;
         
         
     }
