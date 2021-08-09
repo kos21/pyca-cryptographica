@@ -64,7 +64,7 @@ class Fernet_8271{
     
     private template <char[]> encodeBytes_781782(int valueBytes_82781 = NULL){
         
-        dataBytes_8218 = {
+        char[] dataBytes_8218 = {
             'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P',
 	        'Q','R','S','T','U','V','W','X','Y','Z','a','b','c','d','e','f',
 	        'g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v',
@@ -586,6 +586,12 @@ class Fernet_8271{
                 
                 // @TODO. Create a value of development cypher class applications. TD#_82812
                 
+                Cypher_28189 cypher_2881 = new Cypher_28189(this.encription_key_2818, iv_8281);
+                
+                bytes[] resultData_2818 = cypher_2881.encryption_82871(cypherText_028);
+                bytes finilizeData_2891 = cypher_2881.finilize_8281(resultData_2818);
+                
+                return finilizeData_2891;
                 
             } catch(Exception ex_8281){
                 
