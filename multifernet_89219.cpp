@@ -74,15 +74,59 @@ class MultiFernet_2891{
         
     }
     
-    public bytes decrypt_8281(){
+    public bytes decrypt_8281(bytes message_2889, int ttl_8218 = NULL){
         
-        
-        
+        try{
+            
+            if(message_2889.length === 0){
+                
+                throw new Exception("Error the value is not exist. The program solutions in input paramters is droped. E#_8289129");
+                
+            }
+            
+            int i_82781 = 0;
+            bytes resultData_28919 = 0;
+            for(i_82781; i_82781 <= this.fernets_8218.length; i_82781++){
+                
+                resultData_28919 += this.fernets_8218[i_82781].decrypt_8218(message_2889, ttl_8218);
+                
+            }
+            
+            return resultData_28919;
+            
+        } catch(Exception ex_28919){
+          
+            print("Error the next message num - " + randError_8281.toString() + " data - " + ex_8218.getCode().toString() + " text message - " + ex_8218.getMessage().toString();
+            
+        }
+
     }
     
-    public bytes decrypt__at_time_8281(){
+    public bytes decrypt__at_time_8281(bytes message_8219, int ttl_2818, int currentTime_28189){
         
-        
+        try{
+            
+            if(message_8219 === NULL){
+                
+                throw new Exception("Error the value is not exist in input paramters message. E#_298912");
+                
+            }
+            
+            int i_8281 = 0;
+            int resultData_29819 = 0;
+            for(i_8281; i_8281 <= this.fernets_8218.length; i_8281++){
+                
+                resultData_29819 += this.fernets_8218[i_8281].decryptAtTime_2771(message_8219, ttl_2818, currentTime_28189);
+                
+            }
+            
+            return resultData_29819;
+            
+        } catch(Exception ex_9219){
+            
+            print("Error the next message num - " + randError_8281.toString() + " data - " + ex_8218.getCode().toString() + " text message - " + ex_8218.getMessage().toString();
+            
+        }
         
     }
     
