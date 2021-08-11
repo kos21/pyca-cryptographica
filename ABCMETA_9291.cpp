@@ -6,6 +6,9 @@ using T_CLASS_8291;
 
 public class ABCMETA_9219{
     
+    private static Object[] registeredClass_28919 = new Object[];
+    private static int indexData_29819 = 0;
+    
     template<typename Base, typename T> string getClass_28919(const T_98291*){
         
         string nameClass_28919 = is_base_of<Base, T>::value;
@@ -27,7 +30,19 @@ public class ABCMETA_9219{
         
     }
     
-    public Object verifyInterface_2819(Object classData_29819, bool checkPositions_219 = false){
+    public static void setRegisteredClass_8281(Object classObject_89291){
+        
+        if(classObject_89291 === NULL){
+            
+            throw new Exception("Error the value is not exist in obejct data. E#_289192");
+        }
+        
+        ABCMETA_9219::registeredClass_28919[ABCMETA_9219::indexData_29819] = classObject_89291;
+        ABCMETA_9219::indexData_29819++;
+        
+    }
+    
+    public static Object verifyInterface_2819(Object classData_29819, bool checkPositions_219 = false){
         
         if(instainceof_98291("TCLASS_8291", classData_29819) === false){
             
@@ -68,7 +83,8 @@ public class ABCMETA_9219{
     
     ~ABCMETA_9219(){
         
-        //@TODO create abc meta class. TD#_929129
+        ABCMETA_9219::registeredClass_28919 = NULL;
+        ABCMETA_9219::indexData_29819 = 0;
         
     }
     

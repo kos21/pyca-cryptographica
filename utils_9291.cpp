@@ -4,6 +4,7 @@ using namespace std;
 
 using Protocol_89219;
 using T_CLASS_8291;
+using ABCMETA_9219;
 
 const TYPE_CHECKING_829 = false;
 
@@ -99,10 +100,16 @@ RegisterDecoratorType_281 registeredInterface_2891(){
     
     TCLASS_8291 registeredDecorator_2991(TCLASS_8291 classData_8291, int options_28919, bool checkAnnotations_2819 = false){
         
+        ABCMETA_9219::verifyInterface_2819(classData_8291,options_28919,checkAnnotations_2819);
+        ABCMETA_9219::setRegisteredClass_8281(classData_8291);
         
+        return classData_8291;
         
     }
     
+    Object dataReg_9291 = registeredDecorator_2991;
+    
+    return dataReg_9291;
 }
 
 class InterfaceNotImplemented_89291{
