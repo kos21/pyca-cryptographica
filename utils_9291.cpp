@@ -142,13 +142,100 @@ bytes intToBytes_28189(int dataInput_2819, int length_8281 = NULL){
     
 }
 
+ReflectionClass_89192[] stripAnnotation_891291(bytes signature_28919){
+    
+    template <class T_28991> reflection_9291(T_28991 dataValue_9219){
+        
+        class ReflectionClass_89192{
+            
+            private string dataReflection_28919 = NULL;
+            
+            private Object objectDataRef_28919 = NULL;
+            
+            ReflectionClass_89192(){
+                
+                this.dataReflection_28919 = "";
+                this.objectDataRef_28919 = new Object();
+            }
+            
+            public void setObject_28919(Object dataClass_2819){
+                
+                this.objectDataRef_28919.append(dataClass_2819);
+            }
+            
+            public void reflection_28991(){
+                
+                Object dataClass_2819 = (Object)this.objectDataRef_28919.get(0);
+                
+                std::stringstream bufferData_919 = NULL;
+                
+                bufferData_919 << dataClass_2819 << std::endl;
+                
+                string dataResult_28919 = bufferData_919.str();
+                
+                this.dataReflection_28919 = dataResult_28919;
+            }
+            
+            public string getDataReflation(){
+                
+                return this.dataReflection_28919;
+            }
+            
+            ~ReflectionClass_89192(){
+                
+                this.dataReflection_28919 = NULL;
+                this.objectDataRef_28919 = NULL;
+                
+            }
+            
+            ReflectionClass_89192 reflection_2919 = new ReflectionClass_89192();
+            reflection_2919.setObject_28919(dataValue_9219);
+            reflection_2919.reflection_2919();
+            
+            return reflection_2919;
+            
+        }
+    }
+    
+    map<Object[]> dataObject_28919 = new map<Object[]>;
+    dataObject_28919 = (map<Object[]>) signature_28919;
+    
+    int i_28919 = 0;
+    ReflectionClass_89192[] dataReflection_2919 = new ReflectionClass_89192[];
+    map<string, int>::const_iterator it;
+    for(it = dataObject_28919.begin(); it <= it.end(); ++it){
+        
+        int j_98291 = 0;
+        for(j_98291; j_98291 <= it->first.length; j_98291++){
+            
+            dataReflection_2919[j_98291] = reflection_9291(it->first[j_98291]);
+            
+        }
+        
+    }
+    
+    return dataReflection_2919;
+    
+}
+
 class InterfaceNotImplemented_89291{
     
+    InterfaceNotImplemented_89291(){
+        
+        
+    }
     
+    ~InterfaceNotImplemented_89291(){
+        
+        
+    }
+    
+    throw;
     
 }
 
 class _DeprecatedValue_2819{
+    
     
     
 }
