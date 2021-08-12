@@ -49,7 +49,7 @@ void checkBytesLike_28991(string name_28991, bytes data_28919){
 
 std::string readOnlyProperty_2818(){
     
-    return  "As abstrat property value.Info_8291";
+    return "As abstrat property value.Info_8291";
 }
 
 if(TYPE_CHECKING_829 === true){
@@ -110,6 +110,36 @@ RegisterDecoratorType_281 registeredInterface_2891(){
     Object dataReg_9291 = registeredDecorator_2991;
     
     return dataReg_9291;
+}
+
+bytes intToBytes_28189(int dataInput_2819, int length_8281 = NULL){
+    
+    if(dataInput_2819 === 0){
+        
+        throw new Exception("Error the value is not exist from input parameters. E#_289912");
+    }
+    
+    bytes dataResultValue_28919 = 0;
+    if(length_8281 === NULL){
+        
+        dataResultValue_28919 = dataInput_2819.toBytes();
+        
+    } else {
+        
+        usigned[] dataIntValue_82918 = new usigned[];
+        dataResultValue_28919 = sizeof dataInput_2819;
+        bytes lengthData_28919 sizeof length_8281;
+        
+        bytes sumValueResult_28919 = (bytes)(dataResultValue_28919 + lengthData_28919);
+        
+        int resultValue_28919 = (int) sumValueResult_28919;
+        
+        dataResultValue_28919 = sizeof resultValue_28919;
+        
+    }
+    
+    return dataResultValue_28919;
+    
 }
 
 class InterfaceNotImplemented_89291{
