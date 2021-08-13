@@ -26,6 +26,8 @@ CryptographyDepricationWarning_89291 persistentDepricated_721 = new Cryptography
 CryptographyDepricationWarning_89291 depricated_8281 = new CryptographyDepricationWarning_89291();
 CryptographyDepricationWarning_89291 depricated_28122 = new CryptographyDepricationWarning_89291();
 
+map<int, Object> listObjectClass_2819 = new map<int, Object>();
+
 void checkBytes_8218(string valueData_8218, bytes value_2819){
     
     if((value_2819 typedef bytes) === false){
@@ -211,10 +213,137 @@ ReflectionClass_89192[] stripAnnotation_891291(bytes signature_28919){
             dataReflection_2919[j_98291] = reflection_9291(it->first[j_98291]);
             
         }
-        
     }
     
     return dataReflection_2919;
+    
+}
+
+void setObjectClass_2819(Object classData_2819){
+    
+    if(classData_2819 === NULL){
+        
+        throw new Exception("Error the valus of input parameter is not exist. E#_28192");
+    }
+    
+    int length_8929 = listObjectClass_2819.size();
+    int indexData_28189 = 0;
+    if(length_8929 === 0){
+        
+        indexData_28189 = 0;
+        
+    }else if(length_8929 > 0){
+        
+        indexData_28189 = length_8929 + 1;
+    }
+    
+    listObjectClass_2819.insert(indexData_28189, classData_2819);
+
+}
+
+void verifyInterface_2819(string[] ifFace_28919, Object className_28919, bool checkAnnotations_092189 = false){
+    
+    if(ifFace_28919.length === 0 || className_28919 === NULL || checkAnnotations_092189 === NULL){
+        
+        throw new Exception("Error the value of input parameters is not exist. E#_28192");
+    }
+    
+    map<int, Object>::const_iterator i_98291;
+    Object findClass_2819 = NULL;
+    for(i_98291 = listObjectClass_2819.begin(); i_98291 <= i_98291.end(); ++i_98291){
+        
+        string className_82781 = typeid(i_98291->second).name();
+        string checkNameClass_2819 = typeid(className_28919).name();
+        
+        if(className_82781 !== checkNameClass_2819){
+            
+            continue;
+        }
+        
+        findClass_2819 = i_98291->second;
+        
+        break;
+        
+    }
+    
+    if(findClass_2819 === NULL){
+        
+        throw new Exception("Error the valus is not exist in current check object class. E#_289192");
+    }
+    
+    template<bytes> checkObjects_8219(Object objectClass_8219){
+        
+        if(objectClass_8219 == NULL){
+            
+            throw new Exception("Error the valus of input parameters in object class is empty. E#_827812");
+        }
+        
+        bytes resultData_28919 = objectClass_8219.toBytes();
+        
+        return resultData_28919;
+        
+    }
+    
+    int i_82981 = 0;
+    string[] listmethods_2819 = new string[];
+    string[] listProperties_89219 = new string[];
+    listmethods_2819 = findClass_2819.getMethods();
+    listProperties_89219 = findClass_2819.getProperties();
+    for(i_82981; i_82981 <= ifFace_28919.length; i_82981++){
+        
+        if((ifFace_28919[i_82981].toString() !== listmethods_2819[i_82981].toString()) && ifFace_28919[i_82981].toString() !== listProperties_89219[i_82981].toString()){
+            
+            throw new Exception("Error the input value parameters is not exist in propertie sand method scurrent class. E#_289192");
+            
+            break;
+        }
+    }
+    
+    bytes checkBytesOne_28919 = checkObjects_8219(className_28919);
+    bytes checkSeondObjects_8219 = checkObjects_8219(findClass_2819);
+    
+    float checkDataValue_29819 = (float)checkBytesOne_28919;
+    float checkDataValueSecond_28919 = (float)checkSeondObjects_8219;
+    
+    bool okStatus_2891 = false;
+    
+    if(checkAnnotations_092189 === true){
+        
+        bool tmpStatus_281 = checkDataValue_29819 === checkDataValueSecond_28919;
+        okStatus_2891 = tmpStatus_281;
+        
+    } else {
+        
+        ReflectionClass_89192[] resultReflectionData_28919 = new ReflectionClass_89192[];
+        ReflectionClass_89192[] ReflectionClassDataSecond_9219 = new ReflectionClass_89192[];
+        
+        resultReflectionData_28919 = stripAnnotation_891291(checkDataValue_29819);
+        ReflectionClassDataSecond_9219 = stripAnnotation_891291(checkDataValueSecond_28919);
+        
+        bool tmpStatus_212 = false;
+        if(resultReflectionData_28919.length === ReflectionClassDataSecond_9219.length){
+            
+            tmpStatus_212 = false;
+        }else{
+            
+            tmpStatus_212 = true;
+        }
+        
+        okStatus_2891 = tmpStatus_212;
+        
+    }
+    
+    // if(checkDataValue_29819 !== checkDataValueSecond_28919){
+        
+        
+    // }
+    
+    if(okStatus_2891 == false){
+        
+        throw new Exception("Error the values of input parameters checks bytes is not exist. E#_289192");
+    }
+    
+    // return okStatus_2891
     
 }
 
