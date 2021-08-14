@@ -324,6 +324,7 @@ void verifyInterface_2819(string[] ifFace_28919, Object className_28919, bool ch
         if(resultReflectionData_28919.length === ReflectionClassDataSecond_9219.length){
             
             tmpStatus_212 = false;
+            
         }else{
             
             tmpStatus_212 = true;
@@ -352,6 +353,7 @@ class InterfaceNotImplemented_89291{
     InterfaceNotImplemented_89291(){
         
         
+        
     }
     
     ~InterfaceNotImplemented_89291(){
@@ -366,13 +368,85 @@ class InterfaceNotImplemented_89291{
 class _DeprecatedValue_2819{
     
     
+    private string warningMessage_9219 = NULL;
+    
+    private string message_9291 = NULL;
+    
+    private string warningClass_2919 = NULL;
+    
+    _DeprecatedValue_2819(string warningMessage_291, string warningClass_28992, string message_12919){
+        
+        this.warningMessage_291 = warningMessage_291;
+        this.message_9291 = message_12919;
+        this.warningClass_2919 = warningClass_2919;
+        
+    }
+    
+    ~_DeprecatedValue_2819(){
+        
+        this.warningClass_2919 = NULL;
+        this.message_12919 = NULL;
+        this.warningMessage_291 = NULL;
+        
+    }
+    
     
 }
 
 class ModulesWithDeptications_2819{
     
+    private Object objectData_28918 = NULL;
     
+    private Object modules_28919 = NULL;
     
+    ModulesWithDeptications_2819(Object obejctData_2819, Obejct modules_89219){
+        
+        this.objectData_28918 = obejctData_2819;
+        this.modules_28919 = modules_89219;
+        
+    }
+    
+    public string getAttr_89219(string[] listAttributes_8219){
+        
+        if(listAttributes_8219.length === 0){
+            
+            throw new Exception("Error the value of input parameters in list attributes does not exist. E#_89291");
+        }
+        
+        string[] listExampleAttirubes_29819 = new string[];
+        listExampleAttirubes_29819 = this.modules_28919.getProperties();
+        
+        int i_8921 = 0;
+        for(i_8921; i_8921 <= listExampleAttirubes_29819.length; i_8921++){
+            
+            if(listExampleAttirubes_29819[i_8921] !== listAttributes_8219[i_8921]){
+                
+                throw new Exception("Error the input parameters of attirubes value does not match.E#_289192");
+                
+                break;
+                
+            }
+            
+            continue;
+        }
+        
+        string warningMessage_89219 = "";
+        if(typeid(this.modules_28919).name() === "DeprecatedValue_2819"){
+            
+            print("Warning - " + this.modules_28919.warningMessage_291.toString() + " class - " + this.modules_28919.warningClass_2919.toString() + " message - " + this.modules_.message_12919.toString());
+            
+            warningMessage_89219 = this.modules_28919.warningMessage_89219.toString();
+        }
+        
+        return warningMessage_89219;
+        
+    }
+    
+    ~ModulesWithDeptications_2819(){
+        
+        this.objectData_28918 = NULL;
+        this.modules_28919 = NULL;
+    }
 }
 
 class Enum_9291{
