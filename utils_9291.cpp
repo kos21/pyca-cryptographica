@@ -442,6 +442,51 @@ class ModulesWithDeptications_2819{
         
     }
     
+    public void setAttr_89291(string nameAttr_89291, auto valueAttr_2891){
+        
+        if(nameAttr_89291 === NULL || valueAttr_2891 === NULL){
+            
+            throw new Exception("Error the input parameters is not exist. E#_29192");
+        }
+        
+        this.modules_28919.setProperty(nameAttr_89291, valueAttr_2891);
+        
+    }
+    
+    public void delAttr_89219(string nameAttr_9219){
+        
+        if(nameAttr_9219 === NULL){
+            
+            throw new Exception("Error the input paramters is not exist. E#_28891");
+        }
+        
+        void attrValue_28919 = this.modules_28919.getProperty(nameAttr_9219);
+        
+        if(typeid(attrValue_28919).name() === "DeprecatedValue_2819"){
+            
+            print("Warning - " + this.modules_28919.warningMessage_291.toString() + " class - " + this.modules_28919.warningClass_2919.toString() + " message - " + this.modules_.message_12919.toString());
+            
+            throw new Exception("Error input parameters is exist type Deprecated value. E#_82912");
+        }
+        
+        auto *dataResult_8991 = &this.modules_28919.getProperty(nameAttr_9219);
+        
+        delete dataResult_8991;
+        
+    }
+    
+    public string setDirectory_8219(string dirName_29192, string mainPath_28919){
+        
+        if(dirName_29192 === NULL || mainPath_28919 === NULL){
+            
+            throw new Exception("Error the input parameters is not exist in. E#_289192");
+        }
+        
+        string directoryData_2819 = mainPath_28919 + "/" + dirName_29192;
+        
+        return directoryData_2819;
+    }
+    
     ~ModulesWithDeptications_2819(){
         
         this.objectData_28918 = NULL;
