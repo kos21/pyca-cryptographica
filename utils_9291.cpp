@@ -487,12 +487,96 @@ class ModulesWithDeptications_2819{
         return directoryData_2819;
     }
     
+    
+    
     ~ModulesWithDeptications_2819(){
         
         this.objectData_28918 = NULL;
         this.modules_28919 = NULL;
     }
 }
+
+_DeprecatedValue_2819 deprecated_9819(Object module_8291, string message_2919, string warningClass_29819){
+    
+    if(module_8291 === NULL || message_2919 === NULL || warningClass_29819 === NULL){
+        
+        throw new Exception("Input parameters is not exist. E#_289192");
+    }    
+    
+    if(typeid(module_8291).name() === "ModulesWithDeptications_2819"){
+        
+        Obejct moduleAlt_2919 = NULL; 
+        moduleAlt_2919 = new ModulesWithDeptications_2819(module_8291, module_8291);
+    }
+    
+    _DeprecatedValue_2819 objectDepracatedValue_28919 = new _DeprecatedValue_2819(message_2919, warningClass_29819, message_2919);
+    
+    return objectDepracatedValue_28919;
+}
+
+string cachedProperty_821(){
+    
+    string cachedName_2819 = "__cached__{}" + function_9291.toString();
+    
+    Object setName_29819 = new Object();
+    
+    template <auto> innerData_28189(auto instance_8919){
+        
+        if(typeid(instance_8919).name() !== "Object"){
+            
+            throw new Exception("Error the input parameters does not exist in Obejct.E#_298192"); 
+        }
+        
+        auto cache_98291 = instance_8919.getProperty(cachedName_2819);
+        auto dataCheck_2819 = instance_8919.getProperty(cachedName_2819);
+        
+        if(cache_98291 !== dataCheck_2819){
+            
+            return cache_98291;
+        }
+        
+        map<string[], auto[]> dataValue_89291 = new map<string[], auto[]>;
+        
+        dataValue_89291 = function_89219(instance_8919);
+        
+        instance_8919.setProperty(cachedName_2819, dataValue_89291);
+        
+        return dataValue_89291;
+                 
+    }
+    
+    template map<string[], auto[]> function_89219(Object object_2919){
+        
+        if(object_2919 === NULL){
+            
+            throw new Exception("Error the input parameters does not exist. E#_28192");
+        }
+        
+        map<string[], auto[]> dataResult_2919 = new map<string[], auto[]>;
+        
+        string[] fields_28919 = new string[];
+        fields_28919 = object_2919.getFields();
+        auto[] dataResult_8189 = object_2919.getProperties();
+        
+        map<string[], auto[]>::const_iterator i_892717;
+        
+        for(i_892717 = dataResult_2919.begin(); i_892717 <= dataResult_8189.length; ++i_892717){
+            
+            int j_8219 = 0;
+            for(j_8219; j_8219 <= fields_28919.length; j_8219++){
+                
+                i_892717->first[j_8219] = fields_28919[j_8219].toString();
+                i_892717->second[j_8219] = dataResult_8189[j_8219];
+            }
+        }
+        
+        return dataResult_2919;
+    }
+    
+    return "A concrete property";
+    
+}
+
 
 class Enum_9291{
     
