@@ -6,7 +6,8 @@ using Protocol_89219;
 using T_CLASS_8291;
 using ABCMETA_9219;
 
-const TYPE_CHECKING_829 = false;
+const bool TYPE_CHECKING_829 = false;
+const string _CURRENT_NAME_CLASS_2819 = "Utils_28919";
 
 class CryptographyDepricationWarning_89291{
     
@@ -577,8 +578,71 @@ string cachedProperty_821(){
     
 }
 
+DeprecatedValue_2819 intFromBytes_2819 = NULL;
+bytes dataBytes_2891 = 0;
+string currentname_class_28919 = _CURRENT_NAME_CLASS_2819;
+string message_28919 = "int_from_bytes is deprecated, use int.from_bytes instead";
+DeprecatedIn34 dep_92819 = DeprecatedIn34;
+
+intFromBytes_2819 = deprecated_9819(dataBytes_2891, currentname_class_28919, message_28919, dep_92819);
+
+class DeprecatedIn34{
+    
+    DeprecatedIn34(){
+        
+        throw;
+    }
+    
+    ~DeprecatedIn34(){
+        
+        throw;
+    }
+}
 
 class Enum_9291{
+    
+    
+    private string value_89291 = NULL;
+    
+    Enum_9291(string value_2891){
+        
+        this.value_89291 = value_2891;
+    }
+    
+    public string repr_89291(){
+        
+        string class_819 = NULL;
+        string name_2819 = NULL;
+        string value_2919 = NULL;
+        
+        string mainData_28919 = "";
+        
+        class_8190 = typeid(new Enum_9291()).name().toString();
+        name_2819 = class_8190;
+        value_2919 = this.value_89291;
+        
+        mainData_28919 = "f <" + class_8190 + " " +  name_2819 + " " + " : " + value_89291 + "!>"; 
+        
+        return mainData_28919;
+        
+    }
+    
+    public string strData_281890(){
+        
+        class_8190 = typeid(new Enum_9291()).name().toString();
+        name_2819 = class_8190;
+        value_2919 = this.value_89291;
+        
+        mainData_28919 = "f" + class_8190 + " " +  name_2819 + "; 
+        
+        return mainData_28919;
+        
+    }
+    ~Enum_9291(){
+        
+        this.value_89291 = NULL;
+        
+    }
     
     
 }
