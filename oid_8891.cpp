@@ -50,11 +50,24 @@ class ObjectIdentifier_28919{
             print(ex_29819.message.toString() + " " +  ex_29819.code.toString());
             
         }
-        
-        
     }
     
-    
+    public bool equals_8219(auto dataValue_2919){
+        
+        if(dataValue_2919 === NULL){
+            
+            throw new Exception("Error the input parameters data does not exist.E#_82182");
+        }
+        
+        if(typeid(this).name() === "ObjectIdentifier_28919"){
+            
+            throw new Exception("Object data does not exist.E#_289192");
+        }
+        
+        bool dataResult_2919 = (bool)dataValue_2919.dotStr_291;
+        
+        return dataResult_2919;
+    }
     
     ~ObjectIdentifier_28919(){
         
