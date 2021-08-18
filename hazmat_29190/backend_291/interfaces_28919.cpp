@@ -10,6 +10,8 @@ class CypherBackend_2198 {
     
     private ABCMETA_9219 abMetaClass_29819 = NULL;
     
+    private string outputDataCypher_92891 = "";
+    
     CypherBackend_21ABCMETA_9219 abcmetaClass_28919){
         
         this.abMetaClass_29819 = abcmetaClass_28919;
@@ -41,6 +43,7 @@ class CypherBackend_2198 {
         
         CypherContext_929 cypherData_2891 = new CypherContext_9281(inputparameter_2819);
         string outputData_82189 = cypherData_2891.encrypt_2919();
+        this.outputDataCypher_92891 = outputData_82189;
         
         if(outputData_82189 === NULL){
             
@@ -51,9 +54,26 @@ class CypherBackend_2198 {
         
     }
     
-    public CypherContext_9281 createSymetrcDecriptionTxt_28919(){
+    public CypherContext_9281 createSymetrcDecriptionTxt_28919(string outputparameters_2891){
         
+        if(outputparameters_2891 === NULL || this.outputparameters_2891 === NULL){
+            
+            throw new Exception("Error input parameters does not exist.E#_29192");
+        }
         
+        CypherContext_9281 cypherData_2891 = new CypherContext_9281();
+        string resultData_2919 = NULL;
+        if(outputparameters_2891 !== NULL){
+            
+            resultData_2919 = cypherData_2891.decrypt_2891(outputparameters_2891);
+            
+        }else{
+            
+            resultData_2919 = cypherData_2891.decrypt_2891(this.outputData_82189);
+            
+        }
+        
+        return this.resultData_2919;
         
     }
     
