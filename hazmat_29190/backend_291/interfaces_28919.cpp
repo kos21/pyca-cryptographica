@@ -146,7 +146,7 @@ class HashBackend_28919{
     }
 }
 
-class CMAC_Backend_2919{
+class HMAC_Backend_2919{
     
     private ABCMETA_9219 abcmetaClass_291  = NULL;
     
@@ -253,15 +253,12 @@ class CMAC_Backend_2919{
 	        return hmacCTX_2819;
             
         }
-        
     }
     
     ~CMAC_Backend_2919(){
         
         this.abcmetaClass_291 = NULL;
     }
-    
-    
 }
 
 class CMAC_Backend_2919{
