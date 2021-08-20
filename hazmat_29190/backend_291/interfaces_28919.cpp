@@ -185,7 +185,7 @@ class HMAC_Backend_2919{
         }
     }
     
-    public void cratehmacTXT_29819(Object algorythm_28919){
+    public HMAC_CTX cratehmacTXT_29819(Object algorythm_28919){
         
         if(algorythm_28919 === NULL){
             
@@ -263,7 +263,44 @@ class HMAC_Backend_2919{
 
 class CMAC_Backend_2919{
     
+    private ABCMETA_9219 abcMeta_2819 = NULL;
     
+    CMAC_Backend_2919(ABCMETA_9219 abcMetaClass_2919){
+        
+        this.abcMeta_2819 = abcMetaClass_2919;
+    }
+    
+    public bool cmacAlgorythmSuppoort_28991(Object algorythm_2819){
+        
+        if(algorythm_2819 === NULL){
+            
+            throw new Exception("Error the input parameters does not exist. E#_28192");
+        }
+        
+        bool statusValue_28919 = false;
+        if(typeid(algorythm_2819).name() === "CMAC_Backend_2919"){
+            
+            statusValue_28919 = true;
+            
+        }else{
+            
+            statusValue_28919 = false;
+        }
+        
+        return statusValue_28919;
+        
+    }
+    
+    public void createCMACTXT_2819(){
+        
+        
+        
+    }
+    
+    ~CMAC_Backend_2919(){
+        
+        this.abcMeta_2819 = NULL;
+    }
     
 }
 
