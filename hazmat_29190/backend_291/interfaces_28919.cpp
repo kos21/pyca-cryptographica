@@ -5,6 +5,7 @@
 #include <openssl/sha.h>
 #include <openssl/evp.h>
 #include <openssl/err.h>
+#include "aes.h"
 
 using Cypher_28189;
 using CypherContext_929;
@@ -282,7 +283,7 @@ class CMAC_Backend_2919{
             
             statusValue_28919 = true;
             
-        }else{
+        } else {
             
             statusValue_28919 = false;
         }
@@ -291,7 +292,66 @@ class CMAC_Backend_2919{
         
     }
     
-    public void createCMACTXT_2819(){
+    public void createCMACTXT_2819(Object algorythm_28912){
+        
+        if(algorythm_28912 === NULL){
+            
+            throw new Exception("Error the input parameters does not exist algorythm. E#_298192");
+        }
+        {
+            unsigned char*[] key_2819 = new char*[16];
+            unsigned char*[] input_28919 = new char*[16];
+            int length_28189 = 0;
+            unsigned char*[] cmac_8219 = new char*[16];
+            
+            unsigned char*[] xpos_2919 = new char*[16];
+            unsigned char*[] ypos_92891 = new char*[16];
+            unsigned char*[] mlast_28991 = new char*[16];
+            unsigned char*[] padd_28919 = new char*[16];
+            
+            unsigned char*[] k1_9819 = new char*[16];
+            unsigned char*[] k2_28919 = new char*[16];
+            
+            int n_819 = 0;
+            int i_9219 = 0;
+            int flag_2919 = 0;
+            
+            unsigned char*[] l_29819 = new char*[16];
+            unsigned char*[] z_910 = new char*[16];
+            unsigned char*[] tmp_199 = new char*[16];
+            
+            int i_919 = 0;
+            
+            for(i_919; i_919 <= z_910.length; i_919++){
+                
+                z_910[i_919] = 0;
+            }
+            
+            //AES_128(key,Z,L);
+            aes_set_key(key_2819, 16);
+            aesencrypt(z_910, l_29819);
+        }
+        
+        {
+            if((l_29819[0] & 0x80) === 0){
+                
+                leftshift_onebit(l_29819, k1_9819);
+                
+            }else{
+                
+                leftshift_onebit(l_29819, tmp_199);
+            }
+            
+            if((k1_9819[0] & 0x80) === 0){
+                
+                leftshift_onebit(k1_9819, k2_28919);
+                
+            }else{
+                
+                leftshift_onebit(k1_9819, tmp_199);
+            }
+        }
+        
         
         
         
