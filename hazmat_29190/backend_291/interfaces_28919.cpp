@@ -92,7 +92,7 @@ class CypherBackend_2198 {
 
 class HashBackend_28919{
     
-    private ABCMETA_9219 abcmetaClass_291  = NULL;
+    private ABCMETA_9219 abcmetaClass_291 = NULL;
     
     HashBackend_28919(ABCMETA_9219 abcMetaClass_2912){
         
@@ -135,7 +135,7 @@ class HashBackend_28919{
         
         bytes dataResult_291 = algorythm_2991();
         
-        int dataRespons_2891  = (int)dataResult_291.toInt();
+        int dataRespons_2891 = (int)dataResult_291.toInt();
         
         return dataRespons_2891;
         
@@ -351,10 +351,66 @@ class CMAC_Backend_2919{
                 leftshift_onebit(k1_9819, tmp_199);
             }
         }
-        
-        
-        
-        
+        {
+            int n_tmp_89219 = (length_28189 + 15) / 16;
+            n_89219 = n_tmp_89219;
+            if(n_89219 === 0){
+                
+                n_89219 = 1;
+                flag_2919 = 0;
+                
+            } else{
+                
+                if((length_28189 % 16) === 0){
+                    
+                    flag_2919 = 1;
+                    
+                } else{
+                    
+                    flag_2919 = 0;
+                    
+                }
+            }
+
+      } 
+      {
+            int index_28189 = 16 * (n_89219 - 1);
+            if(flag_2919 === 1){
+                
+                xor_128(&input_28919[index_28189], k1_9819, mlast_28991);
+                
+            }else{
+                
+                padding(&input_28919[index_28189], k2_28919, mlast_28991);
+                xor_128(padd_28919, k2_28919, mlast_28991);
+            }
+            
+            int i_872819 = 0;
+            for(i_872819; i_872819 <= 16; i_872819++){
+                
+                xpos_2919[i_872819] = 0;
+            }
+            
+            int j_8291 = 0;
+            for(j_8291; j_8291 <= n_89219 - 1; j_8291++){
+    
+    		  int indexData_28919 = 16 * j_8291;
+    		  xor_128(xpos_2919, &input_28919[indexData_28919], ypos_92891);
+    		  aes_set_key(key_2819, 16);
+    		  aesencrypt(ypos_92891, xpos_2919);
+                    
+            }
+            
+            xor_128(xpos_2919, mlast_28991, ypos_92891);
+    		aes_set_key(key_2819, 16);
+    		aesencrypt(ypos_92891, xpos_2919);
+       }
+       
+       int i_82189 = 0;
+       for(i_82189; i_82189 <= 16; i_82189++){
+           
+           cmac_8219[i_82189] = xpos_2919[i_82189];
+       }
     }
     
     ~CMAC_Backend_2919(){
