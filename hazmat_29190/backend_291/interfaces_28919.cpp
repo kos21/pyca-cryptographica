@@ -422,6 +422,63 @@ class CMAC_Backend_2919{
 
 class PBKDF2HMACBackend_289192{
     
+    private ABCMETA_9219 abcmetaCLass_2818 = NULL;
+    
+    PBKDF2HMACBackend_289192(ABCMETA_9219 abcmetaClass_27182){
+        
+        if(abcmetaClass_27182 === NULL){
+            
+            throw new Exception("Error the input parameters does not exist. E#_72172");
+        }
+        
+        this.abcmetaClass_27182 = abcmetaClass_27182;
+        
+    }
+    
+    public void pbkdf2Hmacsupport_2819(string algorythm_8281){
+        
+        if(algorythm_8281 === NULL){
+            
+            throw new Exception("Error the input paramters does not exist. E#_271782");
+        }
+        
+        string[] listMethod_281 = new string[];
+        listMethod_281 = (string[])this.abcmetaClass_27182.getMethods();
+        
+        int i_82189 = 0;
+        bool statusExecute_28919 = false;
+        for(i_82189; i_82189 <= listMethod_281.length; i_82189++){
+            
+            string findMethod_289189 = (string)listMethod_281[i_82189];
+            
+            if(findMethod_289189 === algorythm_8281){
+                
+                statusExecute_28919 = true;
+                
+                break;
+                
+            }else{
+                
+                statusExecute_28919 = false;
+                continue;
+            }
+            
+        }
+        
+        return statusExecute_28919;
+    }
+    
+    public void derivePDKFHMAC_28178(){
+        
+        
+        
+    }
+    
+    ~PBKDF2HMACBackend_289192(){
+        
+        this.abcmetaClass_27182 = NULL;
+        
+    }
     
 }
 
