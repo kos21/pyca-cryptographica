@@ -468,7 +468,22 @@ class PBKDF2HMACBackend_289192{
         return statusExecute_28919;
     }
     
-    public void derivePDKFHMAC_28178(){
+    public char*[] derivePDKFHMAC_28178(char*[] keyData_281, string password_28189, string salt_2818){
+        
+        char*[] resultKey_8198 = new char*[keyData_281.length];
+        int c_28891 = 100;
+        
+        int[] r_89291 = new int[];
+        int[] l_291 = new int[];
+        
+        int t_82918 = new int[];
+        
+        template<char*[]> generateKeyData_2818(string saltData_2981, int indexData_8219, int countIterations_28919, string password_28189){
+            
+            
+            
+        }
+        
         
         
         
