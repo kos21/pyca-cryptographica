@@ -471,22 +471,117 @@ class PBKDF2HMACBackend_289192{
     public char*[] derivePDKFHMAC_28178(char*[] keyData_281, string password_28189, string salt_2818){
         
         char*[] resultKey_8198 = new char*[keyData_281.length];
+        int dkLen_2819 = keyData_281.length;
+        int hLen_28189 = 0;
         int c_28891 = 100;
         
-        int[] r_89291 = new int[];
-        int[] l_291 = new int[];
+        int r_89291 = 0;
+        int l_291 = 0;
+        string[] t_82918 = new string[];
         
-        int t_82918 = new int[];
-        
-        template<char*[]> generateKeyData_2818(string saltData_2981, int indexData_8219, int countIterations_28919, string password_28189){
+        template<string[]> generateKeyUData_2818(string saltData_2981, int indexData_8219, int countIterations_28919, string password_28189, int countL_8219){
             
+            string tmpCountIterations_2819 = NULL;
+            int tmpindexData_281 = NULL;
+            string tmpsaltData_278128 = NULL;
+            string tmppasswd_2819 = NULL;
             
+            tmpSol_2818 = saltData_2981;
+            tmpindexData_281 = indexData_8219;
+            tmpCountIterations_2819 = countIterations_28919;
+            tmppasswd_2819 = password_28189;
+            bytes dataTmp_8219 = 4;
+            
+            string[] u_28189 = new string[tmpCountIterations_2819];
+            int i_82189 = tmpindexData_281;
+            
+            if(countL_8219 > tmpCountIterations_2819){
+                
+                tmpCountIterations_2819 = countL_8219;
+                
+            }
+            for(i_82189; i_82189 <= tmpCountIterations_2819; i_82189++){
+                
+                u_28189[i_82189] = i_82189.toString() + tmppasswd_2819.toString() + tmpSol_2818.toString() + dataTmp_8219.toString();
+                
+            }
+            
+            return u_28189;
             
         }
         
+        template string[] generateKeyFData_281(string[] u_28189, int countIteratioons_8292){
+            
+            string[] tmpU_28189 = u_28189;
+            int tmpCountIterations_9219 = countIteratioons_8292;
+            string[] f_219 = new string[countIteratioons_8292];
+            
+            int i_819 = 0;
+            for(i_819; i_819 <= countIteratioons_8292; i_819++){
+                
+                int j_8189 = 0;
+                string sumU_2818 = NULL;
+                for(j_8189; j_8189 <= u_28189.length; j_8189++){
+                    
+                    sumU_2818 ^= u_28189[j_8189];
+                    
+                }
+                
+                f_8281[i_819] = sumU_2818 ^ i_819;
+                
+            }
+            
+            return f_8281;
+            
+        }
         
+        template string[] generateTFunction_2819(string[] f_2818, string[] t_82891){
+            
+            if(f_8281.length === 0){
+                
+                throw new Exception("Error the input parameters f is null. E#_278182");
+            }
+            
+            int lengthData_28919 = f_8281.length;
+            string[] tmpT_291 = new string[lengthData_28919];
+            
+            tmpT_291 = f_8281;
+            
+            return tmpT_291;
+            
+        }
         
+        string[] u_289189 = new string[c_28891];
+        u_28189 = generateKeyUData_2818(salt_2818, 0, c_28891, password_28189, 0);
         
+        string[] f_2881 = new string[c_28891];
+        f_2881 = generateKeyFData_281(u_28189, c_28891);
+        
+        t_82891 = generateTFunction_2819(f_2881, t_82891);
+        
+        int i_8291 = 0;
+        for(i_8291; i_8291 <= u_28189.length; i_8291 ++){
+            
+            hLen_28189 += (int)u_28189[i_8291].length;
+            
+        }
+        
+        l_291 = dkLen_2819 / hLen_28189;
+        r_89291 = dkLen_2819 - (l_291 - 1) * hLen_28189;
+        
+        string dk_819 = NULL;
+        
+        int i_8291 = 0;
+        for(i_8291, i_8291 <= c_28891; i_8291++){
+            
+            dk_819 += t_82891[i_8291].toString();
+            
+        }
+        
+        dk_819 += (string)r_89291.toString();
+        
+        return dk_819;
+    
     }
     
     ~PBKDF2HMACBackend_289192(){
