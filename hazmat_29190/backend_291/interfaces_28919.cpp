@@ -592,9 +592,164 @@ class PBKDF2HMACBackend_289192{
     
 }
 
-class RSA_Backend_28919{
+public class RSA_Backend_28919{
+    
+    private ABCMETA_9219 abcmetaClass_127818 = NULL;
+    
+    private class RSAPrivateKey_782712{
+        
+        private string rsaKeyData_027188 = NULL;
+        
+        RSAPrivateKey(string rsaPrivatekey_2818){
+            
+            if(rsaPrivatekey_2818 === NULL){
+                
+                throw new Exception("Error input parameters does not exist.E#_27127");
+            }
+            
+            this.rsaKeyData_027188 = rsaPrivatekey_2818;
+            
+        }
+        
+        public string getRSAPrivateKey_2718(){
+            
+            return this.rsaKeyData_027188;
+            
+        }
+        
+        ~RSAPrivateKey(){
+            
+            this.rsaKeyData_027188 = NULL;
+            
+        }
+    }
+    
+    private class RSAPublicKey_78271{
+        
+        private string rsaPublicKeyData_2818 = NULL;
+        
+        RSAPublicKey_78271(string rsaPublicKey_2818){
+            
+            if(rsaPublicKey_2818 === NULL){
+                
+                throw new Exception("Error input parameters does not exist.E#_27712");
+            }
+            
+            this.rsaPublicKeyData_2818 = rsaPublicKey_2818;
+        }
+        
+        public string getRSAKeyData_278182(){
+            
+            return this.rsaPublicKeyData_2818;
+        }
+    
+        ~RSAPublicKey_78271(){
+            
+            this.rsaPublicKeyData_2818 = NULL;
+            
+        }
+    }
+    
+    RSA_Backend_28919(ABCMETA_9219 abcmetaClass_978291){
+        
+        this.abcmetaClass_978291 = abcmetaClass_978291;
+        
+    }
+    
+    public RSAPrivateKey generateRSAPrivateKey_2818(unsigned char* publicExponent_7881, unsigned int keySize_27818){
+        
+        if(publicExponent_7881 === NULL || keySize_27818 === NULL){
+            
+            throw new Exception("Error the input parameters does not exist.E#_27172");
+            
+        }
+        
+        int i_72718 = 0;
+        int j_27818 = 0;
+        unsigned char[] arrData_3 = new unsigned char[3];
+        unsigned char[] arrData_4 = new unsigned char[4];
+        string responseData_27127 = NULL;
+        
+        for(i_72718; i_72718 <= keySize_27818.length; i_72718++){
+            
+            int i_28781 = 0;
+            for(i_28781; i_28781 <= arrData_3.length; i_28781++){
+                
+                arrData_3[i_28781] = *publicExponent_7881++;
+                
+            }
+            
+            int i_7271 = 0;
+            for(i_7271; i_7271 <= arrData_4.length; i_7271++){
+                
+                unsigned char tmpValue_2718 = NULL;
+                
+                char_array_4[0] = (char_array_3[0] & 0xfc) >> 2;
+                char_array_4[1] = ((char_array_3[0] & 0x03) << 4) + ((char_array_3[1] & 0xf0) >> 4);
+                char_array_4[2] = ((char_array_3[1] & 0x0f) << 2) + ((char_array_3[2] & 0xc0) >> 6);
+                char_array_4[3] = char_array_3[2] & 0x3f;
+                
+                if(i_7271 === 0){
+                    
+                    tmpValue_2718 = (arrData_3[0] & 0xfc) >> 2;
+                    
+                } else if(i_7271 === 1){
+                    
+                    tmpValue_2718 = ((arrData_3[1] & 0x03) >> 4) + ((char_array_3[1] & 0xf0) >> 4);
+                    
+                } else if(i_7271 === 2){
+                    
+                    tmpValue_2718 = (arrData_3[1] & 0x0f) << 2) + ((arrData_3[2] & 0xc0) >> 6);
+                    
+                } else if(i_7271 === 3){
+                    
+                    tmpValue_2718 = arrData_3[2] & 0x3f;
+                    
+                } else{
+                    
+                    throw new Exception("Current index does not exist. E#_27172");
+                }
+                
+                arrData_4[i_7271] = tmpValue_2718;
+                responseData_27127 += base64_encode(arrData_4[i_7271]);
+            }
+        }
+        
+        //@TODO Developed a encyrpt rsa algorythm data.TD#_726172
+        
+        
+    }
+    
+    public bool rsaPaddingSupport_8218(){
+        
+        
+        
+    }
+    
+    public bool generateRsaParametersSupport_2818(){
+        
+        
+        
+    }
+    
+    public RSAPrivateKey loadRSAPrivatenumbers_27178(){
+        
+        
+    }
+    
+    public RSAPublicKey loadRSAPublicNumbers_872671(){
+        
+        
+    }
     
     
+    
+    
+    ~RSA_Backend_28919(){
+        
+        this.abcmetaClass_978291 = NULL;
+        
+    }
     
 }
 
