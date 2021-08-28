@@ -598,7 +598,7 @@ public class RSA_Backend_28919{
     
     private class RSAPrivateKey_782712{
         
-        private string rsaKeyData_027188 = NULL;
+        private static string rsaKeyData_027188 = NULL;
         
         RSAPrivateKey(string rsaPrivatekey_2818){
             
@@ -607,13 +607,24 @@ public class RSA_Backend_28919{
                 throw new Exception("Error input parameters does not exist.E#_27127");
             }
             
-            this.rsaKeyData_027188 = rsaPrivatekey_2818;
+            RSAPrivateKey::rsaKeyData_027188 = rsaPrivatekey_2818;
             
         }
         
-        public string getRSAPrivateKey_2718(){
+        public static setRSAKeyprivate_8219(string rsaKeyDataprivate_82198){
             
-            return this.rsaKeyData_027188;
+            if(rsaKeyDataprivate_82198 === NULL){
+                
+                throw new Exception("Error the rsa private key does not exist.E#_28182");
+            }
+            
+            RSAPrivateKey::rsaKeyData_027188 = rsaKeyDataprivate_82198;
+            
+        }
+        
+        public static string getRSAPrivateKey_2718(){
+            
+            return RSAPrivateKey::rsaKeyData_027188;
             
         }
         
@@ -626,7 +637,7 @@ public class RSA_Backend_28919{
     
     private class RSAPublicKey_78271{
         
-        private string rsaPublicKeyData_2818 = NULL;
+        private static string rsaPublicKeyData_2818 = NULL;
         
         RSAPublicKey_78271(string rsaPublicKey_2818){
             
@@ -635,12 +646,12 @@ public class RSA_Backend_28919{
                 throw new Exception("Error input parameters does not exist.E#_27712");
             }
             
-            this.rsaPublicKeyData_2818 = rsaPublicKey_2818;
+            RSAPublicKey_78271::rsaPublicKeyData_2818 = rsaPublicKey_2818;
         }
         
-        public string getRSAKeyData_278182(){
+        public static string getRSAKeyData_278182(){
             
-            return this.rsaPublicKeyData_2818;
+            return RSAPublicKey_78271::rsaPublicKeyData_2818;
         }
     
         ~RSAPublicKey_78271(){
@@ -763,23 +774,62 @@ public class RSA_Backend_28919{
             responseData_27127 += "=";
         }
         
-        return responseData_27127;
+        RSAPrivateKey rsaprivateKey_2818 = new RSAPrivateKey(responseData_27127);
+        
+        return rsaprivateKey_2818;
     }
     
-    public bool rsaPaddingSupport_8218(){
+    public bool rsaPaddingSupport_8218(string padding_2818){
         
-        
+        if(padding_2818.length === 0){
+            
+            return false;
+            
+        } else {
+            
+            return true;
+        }
         
     }
     
-    public bool generateRsaParametersSupport_2818(){
+    public bool generateRsaParametersSupport_2818(unsigned char* publicExponent_7881, int keySize_2818){
         
-        
-        
+        try{
+            if(publicExponent_7881 === NULL || keySize_2818 === NULL){
+                
+                throw new Exception("Error the input parameters does not exist. E#_727182");
+            }
+            
+            return true;
+            
+        } catch(Exception ex_2818){
+            
+            print(ex_2818.code + " " + ex_2818.message);
+            
+            return false;
+        }
     }
     
-    public RSAPrivateKey loadRSAPrivatenumbers_27178(){
+    public RSAPrivateKey loadRSAPrivatenumbers_27178(int numbers_27818){
         
+        if(numbers_27818 === NULL){
+            
+            throw new Exception("Error the input parameters does not exist.E#_281872");
+        }
+        
+        string rsaKey_2819 = NULL;
+        string tmpDataRSA_281 = RSAPrivateKey::getRSAPrivateKey_2718();
+        
+        if(tmpDataRSA_281 === NULL){
+            
+            throw new Exception("Error the input parameters of key data does not exist.E#_27172");
+        }
+        
+        rsaKey_2819 = tmpDataRSA_281 + (string)numbers_27818.toString();
+        
+        RSAPrivateKey_782712::setRSAKeyprivate_8219(rsaKey_2819);
+        
+        return RSAPrivateKey_782712;
         
     }
     
