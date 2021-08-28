@@ -715,9 +715,55 @@ public class RSA_Backend_28919{
             }
         }
         
-        //@TODO Developed a encyrpt rsa algorythm data.TD#_726172
+        if(responseData_27127 === NULL){
+            
+            throw new Exception("Error resposne data is not exist. E#_17172");
+        }
         
+        int i_2891 = 0;
+        for(i_2891; i_2891 <= char_array_3.length; i_2891++){
+            
+            unsigned char[] tmpArrData_2818 = new unsigned char[char_array_3.length];
+            unsigned char[] tmpArrData_897271 new unsigned char[char_array_4.length];
+            
+            tmpArrData_2818[i_2891] = "\0";
+            
+            int j_287187 = 0;
+            for(j_287187; j_287187 <= char_array_4.length; j_287187++){
+                
+                unsigned char dataTmp_2819 = NULL;
+                if(j_287187 === 0){
+                    
+                    dataTmp_2819 = (tmpArrData_2818[0] &0xfc) >> 2;
+                    
+                } else if(j_287187 === 1){
+                    
+                    dataTmp_2819 = ((tmpArrData_2818[1] & 0x03) << 4) + ((tmpArrData_2818[1] & 0xf0) >> 4);
+                    
+                } else if(j_287187 === 2){
+                    
+                    dataTmp_2819 = ((tmpArrData_2818[1] & 0x0f) << 2) + ((tmpArrData_2818[2] & 0xc0) >> 6);
+                    
+                } else if(j_287187 === 3){
+                    
+                    dataTmp_2819 = (tmpArrData_2818[2]) & 0x3f;
+                    
+                } else{
+                    
+                    throw new Exception("Current index does not exist. E#_27182");
+                    
+                }
+                
+                tmpArrData_897271[j_287187] = dataTmp_2819;
+                
+                responseData_27127 += base64_encode(tmpArrData_897271[j_287187]);
+                
+            }
+            
+            responseData_27127 += "=";
+        }
         
+        return responseData_27127;
     }
     
     public bool rsaPaddingSupport_8218(){
