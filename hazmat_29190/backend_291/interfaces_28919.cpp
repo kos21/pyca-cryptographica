@@ -909,6 +909,8 @@ class DSABackend_291 {
             throw new Exception("Error the input parameters on key size data.E#_27172");
         }
         
+        int tmpKeyData_87218 = keySize_7281;
+        
         
         
     }
@@ -922,9 +924,11 @@ class DSABackend_291 {
     public bool generateDSAPrivateKeyAndNumbers_82189(){
         
         
+        
     }
     
     public DSAPrivateKey_2818 dsaHashSupport_82891(){
+        
         
         
     }
@@ -932,9 +936,11 @@ class DSABackend_291 {
     public bool dsaParametersSupport_2819(){
         
         
+        
     }
     
     public DSAPrivateKey_2818 loadDsaPrivateNumbers_2818(){
+        
         
         
     }
@@ -942,9 +948,11 @@ class DSABackend_291 {
     public DSAPublicKey_2819 loadDsaPublicNumbers_2818(){
         
         
+        
     }
     
     public DSAParameters_2818 loadDsaParametersNumbers_27182(){
+        
         
         
     }
