@@ -833,8 +833,22 @@ public class RSA_Backend_28919{
         
     }
     
-    public RSAPublicKey loadRSAPublicNumbers_872671(){
+    public RSAPublicKey_78271 loadRSAPublicNumbers_872671(int numbers_2812){
         
+        if(numbers_2812 === NULL){
+            
+            throw new Exception("Error input parameters does not exist. E#_271278");
+        }
+        
+        string hashData_2819 = NULL;
+        string tmpDatahash_82718 = NULL;
+        
+        hashData_2819 = RSAPrivateKey_782712::getRSAPrivateKey_2718();
+        tmpDatahash_82718 = hashData_2819 + (string)numbers_2812.toString();
+        
+        RSAPublicKey_78271 rsaPublicKey_82891 = new RSAPublicKey_78271(tmpDatahash_82718);
+        
+        return rsaPublicKey_82891;
         
     }
     
