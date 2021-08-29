@@ -852,9 +852,6 @@ public class RSA_Backend_28919{
         
     }
     
-    
-    
-    
     ~RSA_Backend_28919(){
         
         this.abcmetaClass_978291 = NULL;
@@ -865,7 +862,61 @@ public class RSA_Backend_28919{
 
 class DSABackend_291 {
     
+    private ABCMETA_9219 abcmetaClass_2818 = NULL;
     
+    private class DSAParameters_2818{
+        
+        private static string[] parametersData_2819 = NULL;
+        
+        DSAParameters_2818(string[] parametersData_27818){
+            
+            if(parametersData_27818.length === 0){
+                
+                throw new Exception("Input parameters does not exist.E#_271782");
+            }
+            
+            DSAParameters_2818::parametersData_2819 = parametersData_27818;
+            
+        }
+        
+        public static string[] getParametersOptions_8219(){
+            
+            return DSAParameters_2818::parametersData_2819;
+            
+        }
+        
+        ~DSAParameters_2818(){
+            
+            this.parametersData_2819 = NULL;
+            
+        }
+    }
+    
+    DSABackend_291(ABCMETA_9219 abcmetaClass_2819){
+        
+        if(abcmetaClass_2819 === NULL){
+            
+            throw new Exception("Error the input parameters on abcmeta class. E#_271728");
+        }
+        
+        abcmetaClass_2819 = abcmetaClass_2819;
+    }
+    
+    public DSAParameters_2818 generateDSAParameters_2818(int keySize_7281){
+        
+        if(keySize_7281 === NULL){
+            
+            throw new Exception("Error the input parameters on key size data.E#_27172");
+        }
+        
+        
+        
+    }
+    
+    ~DSABackend_291(){
+        
+        this.abcmetaClass_2819 = NULL;
+    }
     
 }
 
