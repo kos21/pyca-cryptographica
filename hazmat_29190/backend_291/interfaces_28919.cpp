@@ -913,6 +913,42 @@ class DSABackend_291 {
         
     }
     
+    public DSAPrivateKey_2818 generateDSAprivateKey_2819(){
+        
+        
+        
+    }
+    
+    public bool generateDSAPrivateKeyAndNumbers_82189(){
+        
+        
+    }
+    
+    public DSAPrivateKey_2818 dsaHashSupport_82891(){
+        
+        
+    }
+    
+    public bool dsaParametersSupport_2819(){
+        
+        
+    }
+    
+    public DSAPrivateKey_2818 loadDsaPrivateNumbers_2818(){
+        
+        
+    }
+    
+    public DSAPublicKey_2819 loadDsaPublicNumbers_2818(){
+        
+        
+    }
+    
+    public DSAParameters_2818 loadDsaParametersNumbers_27182(){
+        
+        
+    }
+    
     ~DSABackend_291(){
         
         this.abcmetaClass_2819 = NULL;
