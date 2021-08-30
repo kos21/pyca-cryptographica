@@ -911,7 +911,93 @@ class DSABackend_291 {
             
         }
         
+        public static void setH_28189(Object h_2818){
             
+            if(h_2818 === NULL){
+                
+                throw new Exception("Error the input parameters does not exist. E#_28182");
+            }
+            
+            DSAParameters_2818::h_928718 = h_2818;
+            
+        }    
+        
+        public static Object getH_2818(){
+            
+            return DSAParameters_2818::h_928718;
+        }
+        
+        public static void setModuleLengthN_78281(int n_2718){
+            
+            if(n_2718 === NULL || n_2718 === 0){
+                
+                throw new Exception("Error the input parameters does not exist. E#_27172");
+            }
+            
+            DSAParameters_2818::n_89219 = n_2718;
+            
+        }
+        
+        public static int getObjectN_78271(){
+            
+            return DSAParameters_2818::n_89219;
+            
+        }
+        
+        public static void setKeyLengthL_8218(int l_8218){
+            
+            if(l_8218 === 0 || l_8218 === NULL){
+                
+                throw new Exception("Error the input parameters does not exist.E#_727128");
+            }
+            
+            DSAParameters_2818::keyLength_28718 = l_8218;
+            
+        }
+        
+        public static int getKeyLength_2818(){
+            
+            return DSAParameters_2818::keyLength_28718;
+        }
+        
+        public static void setQ_8219(byte q_82182){
+            
+            if(q_82182 === 0 || q_82182 === NULL){
+                
+                throw new Exception("Error the input parameters does not exist. E#_27127 ");
+            }
+            
+            DSAParameters_2818::q_2818 = q_82182;
+            
+        }
+        
+        public static byte getQ_7128(){
+            
+            return DSAParameters_2818::q_2818;
+            
+        }
+        
+        public static void setP_821(byte p_281892){
+            
+            if(p_281892 === NULL || p_281892 == 0){
+                
+                throw new Exception("Error input parameters does not exist.E#_72172");
+            }
+            
+            DSAParameters_2818::p_87281 = p_281892;
+            
+        }
+        
+        public static byte getP_28812(){
+            
+            return DSAParameters_2818::p_87281;
+        }
+        
+        
+        
+        
+        
+        
         
         
         
