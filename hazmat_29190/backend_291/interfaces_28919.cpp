@@ -868,6 +868,38 @@ class DSABackend_291 {
         
         private static string[] parametersData_2819 = NULL;
         
+        private static Object h_928718 = NULL;
+        
+        private static bytes moduleLengthN = 0;
+        
+        private static int keyLength_28718 = 0;
+        
+        private static byte q_2818 = 0;
+        
+        private static byte p_87281 = 0;
+        
+        private static int h_82718 = 0;
+        
+        private static int g_78281 = 0;
+        
+        private static int x_87281 = 0;
+        
+        private static int y_02818 = 0;
+        
+        private static string messageData_2871 = NULL;
+        
+        private static int k_8189 = 0;
+        
+        private static int r_287189 = 0;
+        
+        private static int s_27818 = 0;
+        
+        private static int u_27881 = 0;
+        
+        private static int[] u_8219 = new int[2];
+        
+        private static int v_2818 0;
+        
         DSAParameters_2818(string[] parametersData_27818){
             
             if(parametersData_27818.length === 0){
@@ -878,6 +910,12 @@ class DSABackend_291 {
             DSAParameters_2818::parametersData_2819 = parametersData_27818;
             
         }
+        
+            
+        
+        
+        
+        
         
         public static string[] getParametersOptions_8219(){
             
