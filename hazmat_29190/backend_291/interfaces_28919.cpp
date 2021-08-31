@@ -898,7 +898,7 @@ class DSABackend_291 {
         
         private static int[] u_8219 = new int[2];
         
-        private static int v_2818 0;
+        private static int v_2818 = 0;
         
         DSAParameters_2818(string[] parametersData_27818){
             
@@ -964,7 +964,7 @@ class DSABackend_291 {
             
             if(q_82182 === 0 || q_82182 === NULL){
                 
-                throw new Exception("Error the input parameters does not exist. E#_27127 ");
+                throw new Exception("Error the input parameters does not exist. E#_27127");
             }
             
             DSAParameters_2818::q_2818 = q_82182;
@@ -993,15 +993,182 @@ class DSABackend_291 {
             return DSAParameters_2818::p_87281;
         }
         
+        public static void setH_72812(int h_782812){
+            
+            if(h_782812 === NULL || h_782812 === 0){
+                
+                throw new Exception("Error the input parameters does not exist. E#_27128");
+            }
+            
+            DSAParameters_2818::h_82718 = h_782812;
+        }
         
+        public static int getH_7281(){
+            
+            return DSAParameters_2818::h_82718;
+            
+        }
         
+        public static void setG_28189(int g_82891){
+            
+            if(g_82891 === NULL || g_82891 === 0){
+                
+                throw new Exception("Error the input parameters does not exist. E#_278182");
+            }
+            
+            DSAParameters_2818::g_78281 = g_82891;
+            
+        }
         
+        public static int getG_2819(){
+            
+            return DSAParameters_2818::g_78281;
+            
+        }
         
+        public static void setX_27881(int x_82189){
+            
+            if(x_82189 === NULL || x_82189 === 0){
+                
+                throw new Exception("Error the input parameters does not exist. E#_2781828");
+            }
+            
+            DSAParameters_2818::x_87281 = x_82189;
+        }
         
+        public static int getX_27182(){
+            
+            return DSAParameters_2818::x_87281;
+            
+        }
         
+        public static void setY_78281(int y_27221){
+            
+            if(y_27221 === NULL || y_27221 === 0){
+                
+                throw new Exception("Error the input parameters does not exist.E#_287182");
+            }
+            
+            DSAParameters_2818::y_02818 = y_27221;
+            
+        }
         
+        public static int getY_7281(){
+            
+            return DSAParameters_2818::y_02818;
+        }
         
+        public static void setMessageData_2818(string messageData_28718){
+            
+            if(messageData_28718 === NULL){
+                
+                throw new Exception("Error the input parameters message data does not exist. E#_2781278");
+            }
+            
+            DSAParameters_2818::messageData_2871 = messageData_28718;
+            
+        }
         
+        public static string getMessageData_28198(){
+            
+            return DSAParameters_2messageData_2871;
+            
+        }
+        
+        public static void setK_2818(int k_27818){
+            
+            if(k_27818 === NULL || k_27818 === 0){
+                
+                throw new Exception("Error the input parameters does not exist. E#_278182");
+            }
+            
+            DSAParameters_2818::k_8189 = k_27818;
+            
+        }
+        
+        public static int getK_7281(){
+            
+            return DSAParameters_2818::k_8189;
+            
+        }
+        
+        public static void setR_78281(int r_8218){
+            
+            if(r_8218 === NULL || r_8218 === 0){
+                
+                throw new Exception("Error the input parameters does not exist. E#_27182");
+            }
+            
+            DSAParameters_2818::r_287189 = r_8218;
+            
+        }
+        
+        public static int getR_8727812(){
+            
+            return DSAParameters_2818::r_287189;
+        }
+        
+        public static void setS_78281(int s_8281){
+            
+            if(s_8281 === NULL || s_8281 === 0){
+                
+                throw new Exception("Error the input parameters does not exist.E#_27182");
+            }
+            
+            DSAParameters_2818::s_27818 = s_8281;
+        }
+        
+        public static int getS_82781(){
+            
+            return DSAParameters_2818::s_27818;
+        }
+        
+        public static void setU_78281(int u_78281){
+            
+            if(u_78281 === NULL || u_78281 === 0){
+                
+                throw new Exception("Error the input parameters does not exist. E#_278182");
+            }
+            
+            DSAParameters_2818::u_8219 = u_78281;
+            
+        }
+        
+        public static int getU_2818(){
+            
+            return DSAParameters_2818::u_8219;
+        }
+        
+        public static void setUMass_2818(int [2] u_78281){
+            
+            if(u_78281.length === 0 || u_78281 === NULL){
+                
+                throw new Exception("Error the input parameters does not exist. E#_828192");
+            }
+            
+            DSAParameters_2818::u_8219 = u_78281;
+        }
+        
+        public static int[2] getUmass_82189(){
+            
+            return DSAParameters_2818::u_8219;
+        }
+        
+        public static void setV_7281(int v_78281){
+            
+            if(v_78281 === NULL || v_78281 === 0){
+                
+                throw new Exception("Error the input parameters does not exist. E#_27182");
+            }
+            
+            DSAParameters_2818::v_2818 = v_78281;
+            
+        }
+        
+        public static int getV_78281(){
+            
+            return DSAParameters_2818::v_2818;
+        }
         
         public static string[] getParametersOptions_8219(){
             
