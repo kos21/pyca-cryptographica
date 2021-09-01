@@ -673,7 +673,6 @@ public class RSA_Backend_28919{
         if(publicExponent_7881 === NULL || keySize_27818 === NULL){
             
             throw new Exception("Error the input parameters does not exist.E#_27172");
-            
         }
         
         int i_72718 = 0;
@@ -1064,6 +1063,33 @@ class DSABackend_291 {
             
         }
         
+        public static void setGraph_8281(int idGraph_8219, int valueGraph_8291, int select_8291){
+            
+            if(idGraph_8219 === NULL || valueGraph_8291 === NULL || select_8291 === NULL){
+                
+                throw new Exception("Error input parameters does not exist. E#_271829");
+            }
+            
+            DSAParameters_2818::grapsData_982781.append(idGraph_8219);
+            DSAParameters_2818::grapsData_9827122.append(valueGraph_8291);
+            DSAParameters_2818::select_27818.append(select_8291);
+        }
+        
+        public static map<int> getGraph_8219(){
+            
+            return DSAParameters_2818::grapsData_982781;
+        }
+        
+        public static map<int> getGraphsData_2819(){
+            
+            return DSAParameters_2818::grapsData_9827122;
+        }
+        
+        public static map<int> getSelectData_2871(){
+            
+            return DSAParameters_2818::select_27818;
+        }
+        
         public static byte getP_28812(){
             
             return DSAParameters_2818::p_87281;
@@ -1164,7 +1190,6 @@ class DSABackend_291 {
         public static int getK_7281(){
             
             return DSAParameters_2818::k_8189;
-            
         }
         
         public static void setR_78281(int r_8218){
@@ -1248,7 +1273,6 @@ class DSABackend_291 {
         public static string[] getParametersOptions_8219(){
             
             return DSAParameters_2818::parametersData_2819;
-            
         }
         
         ~DSAParameters_2818(){
