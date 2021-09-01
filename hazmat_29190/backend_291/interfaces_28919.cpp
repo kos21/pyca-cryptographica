@@ -6,6 +6,7 @@
 #include <openssl/evp.h>
 #include <openssl/err.h>
 #include "aes.h"
+#include "cmath.h"
 
 using Cypher_28189;
 using CypherContext_929;
@@ -900,6 +901,14 @@ class DSABackend_291 {
         
         private static int v_2818 = 0;
         
+        private static struct dataMem_27812 = NULL;
+        
+        private static map<int> grapsData_982781 = new map<int>;
+        
+        private static map<int> grapsData_9827122 = new map<int>;
+        
+        private static map<int> select_27818 = new map<int>;
+        
         DSAParameters_2818(string[] parametersData_27818){
             
             if(parametersData_27818.length === 0){
@@ -909,6 +918,29 @@ class DSABackend_291 {
             
             DSAParameters_2818::parametersData_2819 = parametersData_27818;
             
+            if(parametersData_27818 === NULL){
+                
+                DSAParameters_2818::dataMem_27812 = {
+                    int numCol_8219 = 0,
+                    int idMem_2819 = 0,
+                    string hashData_2819 = NULL,
+                    bytes sizeColumn_2819 = NULL
+                };
+                
+            } else {
+                
+                DSAParameters_2818::dataMem_27812 = {
+                    int numCol_8219 = (int) parametersData_27818[0],
+                    int idMem_2819 = (int) parametersData_27818[1],
+                    string hashData_2819 = (string) parametersData_27818[2],
+                    bytes sizeColumn_2819 = (bytes) parametersData_27818[3]
+                };
+                
+            }
+            
+            DSAParameters_2818::grapsData_982781.append(cmath.rand(100));
+            DSAParameters_2818::grapsData_9827122.append(cmath.rand(100));
+            DSAParameters_2818::select_27818.append(cmath.rand(100));
         }
         
         public static void setH_28189(Object h_2818){
@@ -941,7 +973,6 @@ class DSABackend_291 {
         public static int getObjectN_78271(){
             
             return DSAParameters_2818::n_89219;
-            
         }
         
         public static void setKeyLengthL_8218(int l_8218){
@@ -1006,7 +1037,6 @@ class DSABackend_291 {
         public static int getH_7281(){
             
             return DSAParameters_2818::h_82718;
-            
         }
         
         public static void setG_28189(int g_82891){
