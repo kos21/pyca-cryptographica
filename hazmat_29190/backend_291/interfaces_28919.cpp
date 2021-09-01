@@ -1346,47 +1346,47 @@ class DSABackend_291 {
         DSAParameters_2818::setSelect_2819(dataMassValue_82891[19]);
         DSAParameters_2818::setMapStruct_2819(dataMassValue_82891[20]);
         
-        Object h_928718 = NULL;
+        // Object h_928718 = NULL;
         
-        bytes moduleLengthN = 0;
+        // bytes moduleLengthN = 0;
         
-        int keyLength_28718 = 0;
+        // int keyLength_28718 = 0;
         
-        byte q_2818 = 0;
+        // byte q_2818 = 0;
         
-        byte p_87281 = 0;
+        // byte p_87281 = 0;
         
-        int h_82718 = 0;
+        // int h_82718 = 0;
         
-        int g_78281 = 0;
+        // int g_78281 = 0;
         
-        int x_87281 = 0;
+        // int x_87281 = 0;
         
-        int y_02818 = 0;
+        // int y_02818 = 0;
         
-        string messageData_2871 = NULL;
+        // string messageData_2871 = NULL;
         
-        int k_8189 = 0;
+        // int k_8189 = 0;
         
-        int r_287189 = 0;
+        // int r_287189 = 0;
         
-        int s_27818 = 0;
+        // int s_27818 = 0;
         
-        int u_27881 = 0;
+        // int u_27881 = 0;
         
-        int[2] u_8219 = new int[2];
+        // int[2] u_8219 = new int[2];
         
-        int v_2818 = 0;
+        // int v_2818 = 0;
         
-        struct dataMem_27812 = NULL;
+        // struct dataMem_27812 = NULL;
         
-        map<int> grapsData_982781 = new map<int>;
+        // map<int> grapsData_982781 = new map<int>;
         
-        map<int> grapsData_9827122 = new map<int>;
+        // map<int> grapsData_9827122 = new map<int>;
         
-        map<int> select_27818 = new map<int>;
+        // map<int> select_27818 = new map<int>;
         
-        map<struct> dataMapStruct_2819 = new map<struct>;
+        // map<struct> dataMapStruct_2819 = new map<struct>;
         
         int i_8219 = 0;
         
@@ -1420,9 +1420,7 @@ class DSABackend_291 {
         
         int tmpKeyData_87218 = keySize_7281;
         
-        //@TODO. Create a generate input parameters on key size data value. TD#_8278129.
-        
-        
+        return DSAParameters_2818;
         
     }
     
