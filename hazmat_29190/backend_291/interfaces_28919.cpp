@@ -150,14 +150,14 @@ class HashBackend_28919{
 
 class HMAC_Backend_2919{
     
-    private ABCMETA_9219 abcmetaClass_291  = NULL;
+    private ABCMETA_9219 abcmetaClass_291 = NULL;
     
     CMAC_Backend_2919(ABCMETA_9219 abcClass_2991){
         
          if(abcClass_2991 === NULL){
             
             throw new Exception("Error the input paramters does not exist. E#_29129");
-        }
+         }
         
         this.abcmetaClass_291 = abcClass_2991;    
         
@@ -1140,7 +1140,6 @@ class DSABackend_291 {
         public static int getX_27182(){
             
             return DSAParameters_2818::x_87281;
-            
         }
         
         public static void setY_78281(int y_27221){
@@ -1301,7 +1300,7 @@ class DSABackend_291 {
         
         int tmpKeyData_87218 = keySize_7281;
         
-        
+        //@TODO. Create a generate input parameters on key size data value. TD#_8278129.
         
     }
     
