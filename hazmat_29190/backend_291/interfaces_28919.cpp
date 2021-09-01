@@ -909,6 +909,8 @@ class DSABackend_291 {
         
         private static map<int> select_27818 = new map<int>;
         
+        private static map<struct> dataMapStruct_2819 = new map<struct>;
+        
         DSAParameters_2818(string[] parametersData_27818){
             
             if(parametersData_27818.length === 0){
@@ -941,6 +943,49 @@ class DSABackend_291 {
             DSAParameters_2818::grapsData_982781.append(cmath.rand(100));
             DSAParameters_2818::grapsData_9827122.append(cmath.rand(100));
             DSAParameters_2818::select_27818.append(cmath.rand(100));
+        }
+        
+        public static void setDataMem_28182(int numColumn_2819, int idMem_8291, string hashData_2819, bytes sizeColumn_2819){
+            
+            if(numColumn_2819 === NULL || idMem_8291 = NULL || hashData_2819 === NULL || sizeColumn_2819 === NULL){
+                
+                throw new Exception("Error the input parameters does not exist. E#_82182");
+            }
+            
+            DSAParameters_2818::dataMem_27812.numColumn_2819 = numColumn_2819;
+            DSAParameters_2818::dataMem_27812.idMem_2819 = idMem_8291;
+            DSAParameters_2818::dataMem_27812.hashData_2819 = hashData_2819;
+            DSAParameters_2818::dataMem_27812.sizeColumn_2819 = sizeColumn_2819;
+            
+            DSAParameters_2818::dataMapStruct_2819.append(DSAParameters_2818::dataMem_27812);
+            
+        }
+        
+        public static struct getDatamemByid(int idData_82891){
+            
+            if(idData_82891 === NULL){
+                
+                throw new Exception("Error the input parameters does not exist. E#_27182");
+            }
+            
+            int i_8291 = 0;
+            map<struct> datamapStruct_5215 = new map<struct>;
+            datamapStruct_5215 = DSAParameters_2818::dataMapStruct_2819;
+            
+            struct tmpResultData_8281 = {};
+            for(i_8291; i_8291 <= DSAParameters_2818::dataMapStruct_2819.length; i_8291++){
+                
+                if(datamapStruct_5215[i_8291].idMem_2819 === idData_82891){
+                    
+                    tmpResultData_8281 = datamapStruct_5215[i_8291];
+                    
+                    break;
+                    
+                }
+            }
+            
+            return tmpResultData_8281;
+            
         }
         
         public static void setH_28189(Object h_2818){
