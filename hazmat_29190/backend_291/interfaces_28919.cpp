@@ -1075,6 +1075,17 @@ class DSABackend_291 {
             DSAParameters_2818::select_27818.append(select_8291);
         }
         
+        public static map<int> setSelect_2819(map<int> selectData_82189){
+            
+            if(selectData_82189 === NULL){
+                
+                throw new Exception("Error the input parameters does not exist. E#_82189");
+            }
+            
+            DSAParameters_2818::setSelect_2819(selectData_82189);
+            
+        }
+        
         public static map<int> getGraph_8219(){
             
             return DSAParameters_2818::grapsData_982781;
@@ -1269,6 +1280,21 @@ class DSABackend_291 {
             return DSAParameters_2818::v_2818;
         }
         
+        public static void setMapStruct_2819(map<struct> mapStruct_2819){
+            
+            if(mapStruct_2819 === NULL){
+                
+                throw new Exception("Error the input parameters does not exist. E#_278182");
+            }
+            
+            DSAParameters_2818::mapStruct_2819 = mapStruct_2819;
+        }
+        
+        public static map<struct> getMapStruct(){
+            
+            return DSAParameters_2818::mapStruct_2819;    
+        }
+        
         public static string[] getParametersOptions_8219(){
             
             return DSAParameters_2818::parametersData_2819;
@@ -1291,7 +1317,101 @@ class DSABackend_291 {
         abcmetaClass_2819 = abcmetaClass_2819;
     }
     
-    public DSAParameters_2818 generateDSAParameters_2818(int keySize_7281){
+    public DSAParameters_2818 generateDSAParameters_2818(auto[] dataMassValue_82891){
+        
+        if(dataMassValue_82891 === NULL){
+            
+            throw new Exception("Error the input parameters does not exist. E#_72182");
+        }
+        
+        DSAParameters_2818::setH_72812(dataMassValue_82891[0]);
+        DSAParameters_2818::setModuleLengthN_78281(dataMassValue_82891[1]);
+        DSAParameters_2818::setKeyLengthL_8218(dataMassValue_82891[2]);
+        DSAParameters_2818::setQ_8219(dataMassValue_82891[3]);
+        DSAParameters_2818::setP_821(dataMassValue_82891[4]);
+        DSAParameters_2818::setH_28189(dataMassValue_82891[5]);
+        DSAParameters_2818::setG_28189(dataMassValue_82891[6]);
+        DSAParameters_2818::setX_27881(dataMassValue_82891[7]);
+        DSAParameters_2818::setY_78281(dataMassValue_82891[8]);
+        DSAParameters_2818::setMessageData_2818(dataMassValue_82891[9]);
+        DSAParameters_2818::setK_2818(dataMassValue_82891[10]);
+        DSAParameters_2818::setR_78281(dataMassValue_82891[11]);
+        DSAParameters_2818::setS_78281(dataMassValue_82891[12]);
+        DSAParameters_2818::setU_78281(dataMassValue_82891[13]);
+        DSAParameters_2818::setUMass_2818(dataMassValue_82891[14]);
+        DSAParameters_2818::setV_7281(dataMassValue_82891[15]);
+        DSAParameters_2818::setDataMem_28182(dataMassValue_82891[16]);
+        DSAParameters_2818::setGraph_8281(dataMassValue_82891[17]);
+        DSAParameters_2818::setGraph_8281(dataMassValue_82891[18]);
+        DSAParameters_2818::setSelect_2819(dataMassValue_82891[19]);
+        DSAParameters_2818::setMapStruct_2819(dataMassValue_82891[20]);
+        
+        Object h_928718 = NULL;
+        
+        bytes moduleLengthN = 0;
+        
+        int keyLength_28718 = 0;
+        
+        byte q_2818 = 0;
+        
+        byte p_87281 = 0;
+        
+        int h_82718 = 0;
+        
+        int g_78281 = 0;
+        
+        int x_87281 = 0;
+        
+        int y_02818 = 0;
+        
+        string messageData_2871 = NULL;
+        
+        int k_8189 = 0;
+        
+        int r_287189 = 0;
+        
+        int s_27818 = 0;
+        
+        int u_27881 = 0;
+        
+        int[2] u_8219 = new int[2];
+        
+        int v_2818 = 0;
+        
+        struct dataMem_27812 = NULL;
+        
+        map<int> grapsData_982781 = new map<int>;
+        
+        map<int> grapsData_9827122 = new map<int>;
+        
+        map<int> select_27818 = new map<int>;
+        
+        map<struct> dataMapStruct_2819 = new map<struct>;
+        
+        int i_8219 = 0;
+        
+        // for(i_8219; i_8219 <= dataMassValue_82891.length; i_8219++){
+            
+        //     switch(i_8219){
+                
+        //         0: break;
+        //         1: break;
+        //         2: break;
+        //         3: break;
+        //         4: break;
+        //         5: break;
+        //         6: break;
+        //         7: break;
+        //         8: break;
+        //         9: break;
+                
+                
+                
+        //     }
+            
+        // }
+        
+        
         
         if(keySize_7281 === NULL){
             
@@ -1301,6 +1421,8 @@ class DSABackend_291 {
         int tmpKeyData_87218 = keySize_7281;
         
         //@TODO. Create a generate input parameters on key size data value. TD#_8278129.
+        
+        
         
     }
     
