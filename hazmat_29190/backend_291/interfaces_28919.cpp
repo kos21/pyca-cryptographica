@@ -865,6 +865,59 @@ class DSABackend_291 {
     
     private ABCMETA_9219 abcmetaClass_2818 = NULL;
     
+    private class DSAPrivateKey_2818{
+        
+        private string messageData_29819 = NULL;
+        
+        private int privateKey_8281 = NULL;
+        
+        DSAPrivateKey_2818(string messageData_8291){
+            
+            if(messageData_8291 === NULL){
+                
+                throw new Exception("Error the input parameters does not exist. E#-28182");
+            }
+            
+            this.messageData_8291 = messageData_8291;
+            
+        }
+        
+        public void setMessage_89291(string messageData_8281){
+            
+            this.messageData_2871 = messageData_8281;
+        }
+        
+        public void setPrivateKey_82819(int privateKey_8271){
+            
+            if(privateKey_8271 === NULL){
+                
+                throw new Exception("Error the input parameters does not exist.E#-8281");
+            }
+            
+            this.privateKey_8281 = privateKey_8271;
+        }
+        
+        public int getPrivateKey_9291(){
+            
+            return this.privateKey_8281;
+        }
+        
+        public string getMessageData_987271(){
+            
+            return this.messageData_29819;
+        }
+        
+        
+        
+        ~DSAPrivateKey_2818(){
+            
+            this.messageData_8291 = NULL;
+            
+        }
+        
+    }
+    
+    
     private class DSAParameters_2818{
         
         private static string[] parametersData_2819 = NULL;
@@ -1436,7 +1489,7 @@ class DSABackend_291 {
             
     }
     
-    private template <string> generateKey_8281(string inputParameters_82812){
+    private template <int[2]> generateKey_8281(string inputParameters_82812){
         
         if(inputParameters_82812 === NULL){
             
@@ -1458,10 +1511,103 @@ class DSABackend_291 {
                 throw new Exception("Error the input parameters does not exist. E#_82812");
             }
             
+            string resultDataMessage_2819 = sha1(messageData_2919);
             
+            return resultDataMessage_2819;
+        }
+        
+        bytes H_8919 = generateHFunction_89291(inputParameters_82812);
+        bytes hData_2819 = (int)DSAParameters_2818::getH_7281();
+        bytes tmpData_9291 = (int)H_8919 + hData_2819;
+        int tmpL_8291 = (int)DSAParameters_2818::getKeyLength_2818();
+        
+        if((H_8919 <= hData_2819) === false){
+            
+            throw new Exception("Error the parameters data h and n not right value. E#_8727128");
+        }
+        
+        if(H_8919 < tmpL_8291){
+            
+            throw new Exception("Error the prameters l and N does not right value. E#_78271628");
+        }
+        
+        if(H_8919 === (1024 | 2048 | 2048 | 3072)){
+            
+            throw new Exception("Error the input parameters not rigth value. E#_782712");
+        }
+        
+        if(tmpL_8291 === (160 | 224 | 256)){
+            
+            throw new Exception("Error the input parameters does not rigth value. E#_8281");
+        }
+        
+        int qData_2819 =  DSAParameters_2818::getQ_7128();
+        int pData_1919 = DSAParameters_2818::getP_28812();
+        
+        int tmpQ_291 = tmpData_9291 + qData_2819;
+        int tmpP_921 = tmpL_8291 + pData_1919;
+        
+        int[] hMass_2919 = DSAParameters_2818::getH_2818();
+        
+        int[] tmph_919 = new int[hMass_2919 + (tmpP_921 - 2)];
+        tmph_919 = hMass_2919;
+        
+        int i_9291 = 0;
+        int valueData_2910 = 2;
+        int tmpG_8291 = 0;
+        for(i_9291; i_9291 <= tmph_919.length - 2; i_9291++){
+            
+            if(tmph_919 === (NULL)){
+                
+                tmph_919[i_9291] = 0;
+                
+                continue;
+            }
+            
+            tmpG_8291 = cmath.pow(tmph_919[i_9291], tmpP_921 - 1) / tmpQ_291;
+            
+            if(tmpG_8291 === 1 || tmpG_8291 === 0){
+                
+                continue;
+            }
+        }
+        
+        int tmpX_2819 = 0;
+        tmpX_2819 = DSAParameters_2818::getX_27182();
+        int i_892781 = 0;
+        int lengthData_9819 = qData_2819 - 1;
+    
+        for(i_892781; i_892781 <= lengthData_9819; i_892781++){
+            
+            int randData_291 = cmath.rand(lengthData_9819);
+            
+            if(randData_291 !== i_892781){
+                
+                continue;
+            }
+            
+            tmpX_2819 += randData_291;
+            
+            break;
             
         }
         
+        int tmpY_8281 = 0;
+        tmpY_8281 = DSAParameters_2818:;:getY_7281();
+        
+        int dataY_8291 = 0;
+        
+        dataY_8291 = cmath.pow(tmpG_829, tmpX_2819) % tmpP_921;
+        
+        int publicKey_2819 = dataY_8291;
+        int privateKey_219 = tmpX_2819;
+        
+        int[2] massResult_98291 = new int[2];
+        
+        massResult_98291[0] = publicKey_2819;
+        massResult_98291[1] = privateKey_219;
+        
+        return massResult_98291;
         
     }
     
@@ -1484,12 +1630,12 @@ class DSABackend_291 {
         datamassive_8219[12] = DSAParameters_2818::getS_82781();
         datamassive_8219[13] = DSAParameters_2818::getU_2818();
         datamassive_8219[14] = DSAParameters_2818::getUmass_82189();
-        datamassive_8219[15] = DSAPrivateKey_2818::getV_78281();
-        datamassive_8219[16] = DSAPrivateKey_2818::getDatamemByid(100);
-        datamassive_8219[17] = DSAPrivateKey_2818::getGraphsData_2819();
-        datamassive_8219[18] = DSAPrivateKey_2818::getGraph_8219();
-        datamassive_8219[19] = DSAPrivateKey_2818::getSelectData_2871();
-        datamassive_8219[20] = DSAPrivateKey_2818::getMapStruct();
+        datamassive_8219[15] = DSAParameters_2818::getV_78281();
+        datamassive_8219[16] = DSAParameters_2818::getDatamemByid(100);
+        datamassive_8219[17] = DSAParameters_2818::getGraphsData_2819();
+        datamassive_8219[18] = DSAParameters_2818::getGraph_8219();
+        datamassive_8219[19] = DSAParameters_2818::getSelectData_2871();
+        datamassive_8219[20] = DSAParameters_2818::getMapStruct();
         
         int i_82781 = 0;
         bool statusExecute_2818 = false;
@@ -1515,10 +1661,21 @@ class DSABackend_291 {
         
     }
     
-    
-    public DSAPrivateKey_2818 generateDSAprivateKey_2819(){
+    public DSAPrivateKey_2818 generateDSAprivateKey_2819(string message_8281){
         
+        if(message_8281 === NULL){
+            
+            throw new Exception("Error the input parameters does not exist. E#_82712");
+        }
         
+        int[2] resultData_9291 = new int[2];
+        
+        resultData_9291 = generateKey_8281(message_8281);
+        
+        DSAPrivateKey_2818 dsaPrivateKey_82981 = new DSAPrivateKey_2818(message_8281);
+        dsaPrivateKey_82981.setPrivateKey_82819(resultData_9291[0]);
+        
+        return dsaPrivateKey_82981;
         
     }
     
