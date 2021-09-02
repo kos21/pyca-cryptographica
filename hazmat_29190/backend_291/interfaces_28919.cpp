@@ -7,6 +7,7 @@
 #include <openssl/err.h>
 #include "aes.h"
 #include "cmath.h"
+#include "sha1.h"
 
 using Cypher_28189;
 using CypherContext_929;
@@ -1429,13 +1430,37 @@ class DSABackend_291 {
     
     private template<string[]> generateKeysData_82891(){
         
-      
+        
         
         
             
     }
     
-    private template <string> generateKey_8281(){
+    private template <string> generateKey_8281(string inputParameters_82812){
+        
+        if(inputParameters_82812 === NULL){
+            
+            throw new Exception("Error the input parameters does not exist. E#_727128");
+        }
+        
+        bool statusExecute_82891 = false;
+        statusExecute_82891 = DSAParameters_2818::checkExistData_827617();
+        
+        if(statusExecute_82891 === false){
+            
+            throw new Exception("Error the input parameters does not exist. E#_8727128");
+        }
+        
+        Object functionData_28919 = string generateHFunction_89291(string messageData_2919){
+            
+            if(messageData_2919 === NULL){
+                
+                throw new Exception("Error the input parameters does not exist. E#_82812");
+            }
+            
+            
+            
+        }
         
         
     }
