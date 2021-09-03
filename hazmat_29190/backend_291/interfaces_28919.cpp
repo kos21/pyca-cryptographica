@@ -1724,7 +1724,16 @@ class DSABackend_291 {
     
     public DSAPrivateKey_2818 dsaHashSupport_82891(){
         
+        DSAPrivateKey_2818 dsaPrivateKeyData_27818 = NULL;
         
+        if(checkExistData_827617() === false){
+            
+            throw new Exception("Error the key data parameters does not exist. E#_782712");
+        }
+        
+        dsaPrivateKeyData_27818 = new DSAPrivateKey_2818();
+        
+        return dsaPrivateKeyData_27818;
         
     }
     
