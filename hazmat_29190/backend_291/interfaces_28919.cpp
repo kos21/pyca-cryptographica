@@ -1852,10 +1852,18 @@ class DSABackend_291 {
         
     }
     
-    public DSAParameters_2818 loadDsaParametersNumbers_27182(){
+    public DSAParameters_2818 loadDsaParametersNumbers_27182(auto[] parametersDSA_2819){
         
+        if(DSAParameters_2818 === NULL | DSAParameters_2818.length === 0){
+            
+            throw new Exception("Error the input parameters does not exist. E#_872712 ");
+        }
         
+        DSAParameters_2818 dsaParametersData_2819 = NULL;
         
+        dsaParametersData_2819 = this.generateDSAParameters_2818(parametersDSA_2819);
+        
+        return dsaParametersData_2819;
     }
     
     ~DSABackend_291(){
