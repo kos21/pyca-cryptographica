@@ -865,6 +865,64 @@ class DSABackend_291 {
     
     private ABCMETA_9219 abcmetaClass_2818 = NULL;
     
+    private class DSAPublicKey_2819{
+        
+        private static string messageData_2818 = NULL;
+        
+        private static int publicKeyData_7281 = NULL;
+        
+        DSAPublicKey_2819(string messageData_2819, int publicKeyData_2819){
+            
+            if(messageData_2819 === NULL || publicKeyData_2819 === NULL){
+                
+                throw new Exception("Error the input parameters does not exist. E#_278182 ");
+            }
+            
+            DSAPublicKey_2819::messageData_29819 = messageData_29819;
+            DSAPublicKey_2819::publicKeyData_7281 = publicKeyData_2819;
+            
+        }
+        
+        public static void setMessageData_2818(string messageData_28189){
+            
+            if(messageData_28189 === NULL){
+                
+                throw new Exception("Error the input parameters does not exist. E#_287182");
+            }
+            
+            DSAPublicKey_2819::messageData_2818 = messageData_28189;
+            
+        }
+        
+        public static string getMessageData_28189(){
+            
+            return DSAPublicKey_2819::messageData_2818;
+        }
+        
+        public static void setPublicKey_28189(int publicKeyData_82189){
+            
+            if(publicKeyData_82189 === NULL){
+                
+                throw new Exception("Error the input parameters does not exist. E#_782178");
+            }
+            
+            DSAPublicKey_2819::publicKeyData_7281 = publicKeyData_82189;
+        }
+        
+        public static int getPublicKeyData_2819(){
+            
+            return DSAPublicKey_2819::publicKeyData_7281;
+        }
+    
+        ~DSAPublicKey_2819(){
+            
+            DSAPublicKey_2819::messageData_29819 = NULL;
+            DSAPublicKey_2819::publicKeyData_7281 = NULL;
+            
+        }
+        
+    }
+    
     private class DSAPrivateKey_2818{
         
         private string messageData_29819 = NULL;
@@ -1769,13 +1827,26 @@ class DSABackend_291 {
         privateKeysData_2819 = generateDSAprivateKey_2819(messageData_2818);
         
         DSAParameters_2818::setPrivateKey_82819(privateKeysData_2819[0]);
-        DSAPrivateKey_2818:;setPrivateKey_82819(privateKeysData_2819[0]);
+        DSAPrivateKey_2818::setPrivateKey_82819(privateKeysData_2819[0]);
         
         return DSAPrivateKey_2818;
         
     }
     
-    public DSAPublicKey_2819 loadDsaPublicNumbers_2818(){
+    public DSAPublicKey_2819 loadDsaPublicNumbers_2818(string messageData_872189){
+        
+        if(messageData_872189 === NULL || messageData_872189.length === 0){
+            
+            throw new Exception("Error the input parameters does not exist. E#_7827128");
+        }
+        
+        int[,] dataResult_2819 = new int[,];
+        dataResult_2819 = generateDSAprivateKey_2819(messageData_872189);
+        
+        int publicKeyData_2819 = 0;
+        publicKeyData_2819 = dataResult_2819[1];
+        
+        DSAPublicKey_2819::se
         
         
         
