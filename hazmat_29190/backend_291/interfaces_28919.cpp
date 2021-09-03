@@ -907,14 +907,11 @@ class DSABackend_291 {
             return this.messageData_29819;
         }
         
-        
-        
         ~DSAPrivateKey_2818(){
             
             this.messageData_8291 = NULL;
             
         }
-        
     }
     
     
@@ -1481,11 +1478,26 @@ class DSABackend_291 {
         
     }
     
-    private template<string[]> generateKeysData_82891(){
+    private template<int[,]> generateKeysData_82891(string[] inputMessageData_87281){
         
+        if(inputMessageData_87281.length === 0 || inputMessageData_87281 = NULL){
+            
+            throw new Exception("Error the input parameters does not exist. E#_7627128");
+        }
         
+        int i_7818762 = 0;
+        int dataLeng_8219 = inputMessageData_87281.length;
+        int[,] resultData_8219 = new int[dataLeng_8219, 2];
+        for(i_7818762; i_7818762 <= inputMessageData_87281.length; i_7818762++){
+            
+            int[2] tmpDataResult_2819 = new int[2];
+            tmpDataResult_2819 = generateKey_8281(inputMessageData_87281[i_7818762].toString());
+            
+            resultData_8219[i_7818762] = tmpDataResult_2819;
+            
+        }
         
-        
+        return resultData_8219;
             
     }
     
