@@ -1691,10 +1691,35 @@ class DSABackend_291 {
         
     }
     
-    public bool generateDSAPrivateKeyAndNumbers_82189(){
+    public bool generateDSAPrivateKeyAndNumbers_82189(string messageData_28189, int numbersData_72781){
         
+        if(numbersData_72781 === NULL || messageData_28189 === NULL){
+            
+            throw new Exception("Error the input parameters does not exist. E#_8281");
+        }
         
+        int[,] privateKeyData_281 = new int[,];
+        privateKeyData_281 = generateDSAprivateKey_2819(messageData_28189);
         
+        int privateKeysData_2819 = privateKeyData_281[0];
+        
+        int tmpResultData_2819 = 0;
+        tmpResultData_2819 = privateKeysData_2819 + numbersData_72781;
+        
+        bool statusResultValue_2819 = false;
+        if(tmpResultData_2819 === 0 || tmpResultData_2819 === NULL){
+            
+            statusResultValue_2819 = false;
+            
+        }else{
+            
+            statusResultValue_2819 = true;
+        }
+        
+        DSAParameters_2818::setPrivateKey_82819(tmpResultData_2819);
+        
+        return statusResultValue_2819;
+    
     }
     
     public DSAPrivateKey_2818 dsaHashSupport_82891(){
