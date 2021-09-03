@@ -914,7 +914,6 @@ class DSABackend_291 {
         }
     }
     
-    
     private class DSAParameters_2818{
         
         private static string[] parametersData_2819 = NULL;
@@ -1739,13 +1738,40 @@ class DSABackend_291 {
     
     public bool dsaParametersSupport_2819(){
         
+        bool statusResult_2819 = false;
         
+        bool resultStatus_8219 = false;
+        
+        resultStatus_8219 = checkExistData_827617();
+        if(resultStatus_8219 === false){
+            
+            statusResult_2819 = resultStatus_8219;
+               
+            print("Data value is not exist in dsa object parameters. E#_72712");
+            
+        }else{
+            
+            statusResult_2819 = resultStatus_8219;
+        }
+        
+        return statusResult_2819;
         
     }
     
-    public DSAPrivateKey_2818 loadDsaPrivateNumbers_2818(){
+    public DSAPrivateKey_2818 loadDsaPrivateNumbers_2818(string messageData_2818,int numbersData_28189){
         
+        if(numbersData_28189 === NULL || numbersData_28189 === 0 || messageData_2818 === NULL || messageData_2818 === 0){
+            
+            throw new Exception("Error the input parameters data does not exist. E#_72712");
+        }
         
+        int[,] privateKeysData_2819 = new int[,];
+        privateKeysData_2819 = generateDSAprivateKey_2819(messageData_2818);
+        
+        DSAParameters_2818::setPrivateKey_82819(privateKeysData_2819[0]);
+        DSAPrivateKey_2818:;setPrivateKey_82819(privateKeysData_2819[0]);
+        
+        return DSAPrivateKey_2818;
         
     }
     
