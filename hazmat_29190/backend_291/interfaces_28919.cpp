@@ -1846,9 +1846,9 @@ class DSABackend_291 {
         int publicKeyData_2819 = 0;
         publicKeyData_2819 = dataResult_2819[1];
         
-        DSAPublicKey_2819::se
+        DSAPublicKey_2819::setPublicKey_28189(publicKeyData_2819);
         
-        
+        return DSAPublicKey_2819;
         
     }
     
