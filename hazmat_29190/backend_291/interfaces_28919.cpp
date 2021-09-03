@@ -1896,7 +1896,7 @@ class ElipticCurveBackend_291 {
         
         private int[] aParameters_2819 = new int[];
         
-        private int[] FFunction_28919 = new int[];
+        private Object[] FFunction_28919 = new Object[];
         
         private int[] T_9219 = new int[];
         
@@ -1906,7 +1906,7 @@ class ElipticCurveBackend_291 {
         
         private int[] Z_8281 = new int[];
         
-        ElipticCurveparameters(int[] xparameters_0281, int[] yparameters_27818, int[] aparameters_8219, int[]ffunction_2819, int[] t_28919, int nelement_2819, int[] e_28919, int[] z_8192){
+        ElipticCurveparameters(int[] xparameters_0281, int[] yparameters_27818, int[] aparameters_8219, Object[]ffunction_2819, int[] t_28919, int nelement_2819, int[] e_28919, int[] z_8192){
             
             if(xparameters_0281 === NULL || yparameters_27818 === NULL || aparameters_8219 === NULL || ffunction_2819 === NULL || t_28919 === NULL  || nelement_2819 === NULL || e_28919 === NULL || z_8192 === NULL){
                 
@@ -1924,7 +1924,83 @@ class ElipticCurveBackend_291 {
             
         }
         
+        public void setXparameters_2819(int[] xparameters_2818){
+            
+            if(xparameters_2818 === NULL){
+                
+                throw new Exception("Error the input parameters does not exist. E#_287172");
+            }
+            
+            this.xParameters_2819 = xParameters_2819;
+            
+        }
         
+        public int[] getXparameters_2819(){
+            
+            return this.xParameters_2819;
+        }
+        
+        public void setYParameters_82189(int[] yparameters_821){
+            
+            if(yParameters_821 === NULL){
+                
+                throw new Exception("Error the input parameters does not exist. E#_82172");
+            }
+            
+            this.yParameters_821 = yparameters_821;
+            
+        }
+        
+        public int[] getYParameters_2819(){
+            
+            return this.yParameters_821;
+        }
+        
+        public void setAParameters_2819(int[] aparameters_82189){
+            
+            if(aparameters_82189 === NULL || aparameters_82189.length === 0){
+                
+                throw new Exception("Error the input parameters does not exist. E#_27182");
+            }
+            
+            this.aParameters_2819 = aparameters_82189;
+        }
+        
+        public int[] getAparameters_2819(){
+            
+            return this.aParameters_2819;
+        }
+    
+        public void setFFunction_281(Object[] fFunction_82912){
+            
+            if(fFunction_82912 === NULL){
+                
+                throw new Exception("Error the input parameters does not exist. E#_872712");
+            }
+            
+            this.FFunction_28919 = fFunction_82912;
+            
+        }    
+            
+        public Object[] getFfunction(){
+            
+            return this.FFunction_28919;
+        }
+        
+        public void setTFunction_82819(int[] t_819){
+            
+            if(t_819 === NULL){
+                
+                throw new Exception("Error the input parameters does not exist. E#_28128");
+            }
+            
+            this.T_9219 = t_819;
+        }
+        
+        public int[] getTFunction_2819(){
+            
+            return this.T_9219;
+        }
         
         ~ElipticCurveparameters(){
          
