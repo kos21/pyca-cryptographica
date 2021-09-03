@@ -1875,7 +1875,80 @@ class DSABackend_291 {
 
 class ElipticCurveBackend_291 {
     
+    private ABCMETA_9219 abcmetaClass_28189 = NULL;
     
+    ElipticCurveBackend_291(ABCMETA_9219 abcmetaClass_28189){
+        
+        if(abcmetaClass_28189 === NULL){
+            
+            throw new Exception("Error the input parameters does not exist. E#_782182");
+        }
+        
+        this.abcmetaClass_28189 = abcmetaClass_28189;
+        
+    }
+    
+    private class ElipticCurveparameters{
+        
+        private int[] xParameters_2819 = new int[];
+        
+        private int[] yParameters_2819 = new int[];
+        
+        private int[] aParameters_2819 = new int[];
+        
+        private int[] FFunction_28919 = new int[];
+        
+        private int[] T_9219 = new int[];
+        
+        private int nElement_8219 = NULL;
+        
+        private int[] E_8291 = new int[];
+        
+        private int[] Z_8281 = new int[];
+        
+        ElipticCurveparameters(int[] xparameters_0281, int[] yparameters_27818, int[] aparameters_8219, int[]ffunction_2819, int[] t_28919, int nelement_2819, int[] e_28919, int[] z_8192){
+            
+            if(xparameters_0281 === NULL || yparameters_27818 === NULL || aparameters_8219 === NULL || ffunction_2819 === NULL || t_28919 === NULL  || nelement_2819 === NULL || e_28919 === NULL || z_8192 === NULL){
+                
+                throw new Exception("Error the input parameters does not exist. E#_287172");                    
+            }
+            
+            this.xParameters_2819 = xparameters_0281;
+            this.yParameters_2819 = yparameters_27818;
+            this.aParameters_2819 = aparameters_8219;
+            this.FFunction_28919 = ffunction_2819;
+            this.T_9219 = t_28919;
+            this.nElement_8219 = nelement_2819;
+            this.E_8291 = e_28919;
+            this.Z_8281 = z_8192;
+            
+        }
+        
+        
+        
+        ~ElipticCurveparameters(){
+         
+            
+            
+        }
+        
+    } 
+    
+    template <bool> checkExistParameters_8281(){
+        
+        
+    }
+
+    public bool elipticCurveSignratureAlgorythmSupported_2819(){
+        
+                
+        
+    }
+    
+    ~ElipticCurveBackend_291(){
+        
+        this.abcmetaClass_28189 = NULL;
+    }
     
 }
 
