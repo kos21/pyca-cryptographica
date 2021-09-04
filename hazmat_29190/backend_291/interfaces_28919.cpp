@@ -2097,11 +2097,25 @@ class ElipticCurveBackend_291 {
             this.Z_8281 = NULL;
             
         }
-        
     } 
     
-    template <bool> checkExistParameters_8281(){
+    template <bool> checkExistParameters_8281(ElipticCurveparameters elipticCurveParameters_78281){
         
+        if(ElipticCurveparameters === NULL){
+            
+            throw new Exception("Error the input parameters does not exist. E#_72172");
+        }
+        
+        int[] tmpXParameters_2818 = NULL;
+        int[] tmpyParameters_8281 = NULL;
+        int[] tmpAParamters_28189 = NULL;
+        int[] tmpFFunction_8219 = NULL;
+        int[] T_8218 = NULL;
+        int[] nElement_28189 = NULL;
+        int[] eData_281 = NULL;
+        int[] zData_2818 = NULL;
+        
+        //@TODO Check exist parameters data value.TD#_72712
         
     }
 
