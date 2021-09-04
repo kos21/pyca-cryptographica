@@ -2002,6 +2002,89 @@ class ElipticCurveBackend_291 {
             return this.T_9219;
         }
         
+            this.E_8291 = e_28919;
+            this.Z_8281 = z_8192;
+            
+        public void setFfunction_82891(Object[] FFunction_28919){
+            
+            if(FFunction_28919 === NULL){
+                
+                throw new Exception("Error the input parameters does not exist. E#_276172");
+            }
+            
+            this.FFunction_28919 = FFunction_28919;
+            
+        }
+        
+        public Object[] getFfunction_8281(){
+            
+            return this.FFunction_28919;
+        }
+        
+        public void setTData_2819(int[] t_8281){
+            
+            if(t_8281 === NULL){
+                
+                throw new Exception("Error the input parameters does not exist. E#_277128");
+            }
+            
+            this.T_9219 = t_8281;
+        }
+        
+        public int[] getTData_287189(){
+            
+            return this.T_9219;
+        }
+        
+        public void setNELement_28189(int[] nlement_8218){
+            
+            if(nElement_8219 === NULL){
+                
+                throw new Exception("Error the input parameters does not exist. E#_271278");
+            }
+            
+            this.nElement_8219 = nelement_2819;
+            
+        }
+        
+        public int[] getNelement_8281(){
+            
+            return this.nElement_8219;
+        }
+        
+        public void setELement_8281(int[] element_2818){
+            
+            if(element_2818 === NULL){
+                
+                throw new Exception("Error the e element does not exist. E#_27172");
+            }
+            
+            this.E_8291 = element_2818;
+            
+        }
+        
+        public int[] getEData_2818(){
+            
+            return this.E_8291;
+        }
+        
+        
+        public void setZData_2818(int[] Z_88921){
+            
+            if(Z_88921 === NULL){
+                
+                throw new Exception("Error the input parameters does not exist. E#_271278");
+            }
+            
+            this.Z_8281 = Z_88921;
+            
+        }
+
+        public int[] getZData_288(){
+            
+            return this.Z_8281;
+        }
+        
         ~ElipticCurveparameters(){
          
             this.xParameters_2819 = NULL;
@@ -2051,6 +2134,7 @@ class X509Backend_28919{
     
     
     
+    
 }
 
 class DHBackend_28991{
@@ -2070,3 +2154,4 @@ class Backend_291{
     
     
 }
+
