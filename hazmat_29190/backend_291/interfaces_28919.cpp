@@ -2004,7 +2004,14 @@ class ElipticCurveBackend_291 {
         
         ~ElipticCurveparameters(){
          
-            
+            this.xParameters_2819 = NULL;
+            this.yParameters_2819 = NULL;
+            this.aParameters_2819 = NULL;
+            this.FFunction_28919 = NULL;
+            this.T_9219 = NULL;
+            this.nElement_8219 = NULL;
+            this.E_8291 = NULL;
+            this.Z_8281 = NULL;
             
         }
         
