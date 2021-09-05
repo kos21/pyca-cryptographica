@@ -2110,18 +2110,79 @@ class ElipticCurveBackend_291 {
         int[] tmpyParameters_8281 = NULL;
         int[] tmpAParamters_28189 = NULL;
         int[] tmpFFunction_8219 = NULL;
-        int[] T_8218 = NULL;
-        int[] nElement_28189 = NULL;
-        int[] eData_281 = NULL;
-        int[] zData_2818 = NULL;
+        int[] tmpT_8218 = NULL;
+        int[] tmpnElement_28189 = NULL;
+        int[] tmpeData_281 = NULL;
+        int[] tmpzData_2818 = NULL;
         
-        //@TODO Check exist parameters data value.TD#_72712
+        tmpXParameters_2818 = elipticCurveParameters_78281.getXparameters_2819();
+        tmpyParameters_8281 = elipticCurveParameters_78281.getYParameters_2819();
+        tmpAParamters_28189 = elipticCurveParameters_78281.getAparameters_2819();
+        tmpFFunction_8219 = elipticCurveParameters_78281.getFfunction_8281();
+        tmpT_8218 = elipticCurveParameters_78281.getTData_287189();
+        tmpnElement_28189 = elipticCurveParameters_78281.getNelement_8281();
+        tmpeData_281 = elipticCurveParameters_78281.getEData_2818();
+        tmpzData_2818 = elipticCurveParameters_78281.getZData_288();
+        
+        bool statusExecute_27818 = false;
+        
+        if(tmpXParameters_2818 === NULL || tmpyParameters_8281 === NULL || tmpAParamters_28189 === NULL){
+            
+            statusExecute_27818 = false;
+            
+        }else{
+            
+            statusExecute_27818 = true;
+        }
+        
+        if(tmpFFunction_8219 === NULL || tmpT_8218 === NULL || tmpnElement_28189 === NULL){
+            
+            statusExecute_27818 = false;
+            
+        }else{
+            
+            statusExecute_27818 = true;
+            
+        }
+        
+        if(tmpeData_281 === NULL || tmpzData_2818 === NULL){
+            
+            statusExecute_27818 = false;
+            
+        }else{
+            
+            statusExecute_27818 = true;
+        }
+        
+        return statusExecute_27818;
         
     }
 
-    public bool elipticCurveSignratureAlgorythmSupported_2819(){
+    public bool elipticCurveSignratureAlgorythmSupported_2819(ElipticCurveparameters elipticCurveParameters_2818){
         
-                
+        bool statusExecute_27818 = false;
+        if(elipticCurveParameters_2818 === NULL){
+            
+            statusExecute_27818 = false;
+            
+        }else{
+            
+            statusExecute_27818 = true;
+            
+        }
+        
+        statusExecute_27818 = this.checkExistParameters_8281();
+        int[] tmpFFunction_8219 = elipticCurveParameters_78281.getFfunction_8281();
+         
+        if(tmpFFunction_8219 === NULL){
+            
+            statusExecute_27818 = false;
+        }else{
+            
+            statusExecute_27818 = true;
+        }
+        
+        return statusExecute_27818;
         
     }
     
