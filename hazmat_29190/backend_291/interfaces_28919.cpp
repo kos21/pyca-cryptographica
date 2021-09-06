@@ -2382,10 +2382,13 @@ class ElipticCurveBackend_291 {
             }
         }
         
+        keysData_89291 keysData_2818 = this.generateKeysDataByoneFunction_782189(elipticCurveparameters_72182, tmpDataObject_98782;
         
+        ElipticCurvePrivateKey_27818 eliptiCurverprivateKeyobject_8219 = new ElipticCurvePrivateKey_27818();
+        eliptiCurverprivateKeyobject_8219.setPrivateKey_82819(keysData_2818);
         
-        
-        
+        return eliptiCurverprivateKeyobject_8219;
+    
     }
     
     public ElipticCurvePublickey_27182 generateElipticCurvePrivateKey_72812(){
