@@ -2194,7 +2194,7 @@ class ElipticCurveBackend_291 {
         
     }
     
-    template <typename keysData_89291> generateKeysData_2819(ElipticCurveparameters curverParameters_28718){
+    template <typename keysData_89291> generateKeysData_2819(ElipticCurveparameters curverParameters_28718, Object curveFunction_2882){
         
         keysData_89291 dataResultValue_8219 = NULL;
         
@@ -2212,24 +2212,38 @@ class ElipticCurveBackend_291 {
         int countElements_2718 = 100;
         yparameters_8291 = new int[countElements_2718];
         tmpF_8291 = yparameters_8291;
-        for(i_78218; i_78218 <= countElements_2718; i_78218++){
+        
+        if(curveFunction_2882 === NULL){
             
-            int tmpindexA_818 = i_78218;
-            if(aparameters_8291[tmpindexA_818] === countElements_2718){
+            for(i_78218; i_78218 <= countElements_2718; i_78218++){
+            
+                int tmpindexA_818 = i_78218;
+                if(aparameters_8291[tmpindexA_818] === countElements_2718){
+                    
+                    tmpindexA_818 = 0;
+                }
                 
-                tmpindexA_818 = 0;
+                int a1_2881 = aparameters_8291[tmpindexA_818];
+                int a2_28189 = aparameters_8291[tmpindexA_818] + 1;
+                int a3_98291 = aparameters_8291[tmpindexA_818] + 2; 
+                int a4_28189 = aparameters_8291[tmpindexA_818] + 3;
+                int a5_8219 = aparameters_8291[tmpindexA_818] + 4;
+                
+                int x_819 = xparameters_2819[i_78218];
+                yparameters_8291[i_78218] = (cmath.pow(x_819, 3) + a1_2881 * x_819 + a2_28189 * x_819 + a3_98291) * (cmath.pow(a4_28189 * x_819 - a5_8219, -1));
+            
             }
             
-            int a1_2881 = aparameters_8291[tmpindexA_818];
-            int a2_28189 = aparameters_8291[tmpindexA_818] + 1;
-            int a3_98291 = aparameters_8291[tmpindexA_818] + 2; 
-            int a4_28189 = aparameters_8291[tmpindexA_818] + 3;
-            int a5_8219 = aparameters_8291[tmpindexA_818] + 4;
+        } else{
             
-            int x_819 = xparameters_2819[i_78218];
-            yparameters_8291[i_78218] = (cmath.pow(x_819, 3) + a1_2881 * x_819 + a2_28189 * x_819 + a3_98291) * (cmath.pow(a4_28189 * x_819 - a5_8219, -1));
-            
+            for(i_78218; i_78218 <= tmpF_8291.length; i_78218++){
+                
+                tmpF_8291[i_78218] = curveFunction_2882();
+                yparameters_8291[i_78218] tmpF_8291[i_78218];
+                
+            }
         }
+        
         
         tmpF_8291 = yparameters_8291;
         tmpE_8219 = new int[tmpF_8291.length];
@@ -2264,6 +2278,20 @@ class ElipticCurveBackend_291 {
         
         return keysData_89291;
         
+    }
+    
+    private template <typename keysData_89291> generateKeysDataByoneFunction_782189(ElipticCurveparameters curverparameters_78276127, Object curverFunc_82781){
+        
+        if(curverparameters_78276127 === NULL || curverFunc_82781 === NULL){
+            
+            throw new Exception("Error the input parameters does not exist. E#_762612");
+        }
+        
+        int tmpF_8281 = NULL;
+        keysData_89291 keyData_27818 = NULL;
+        keyData_27818 = this.generateEliptiCurvePrivateKey_27182(curverparameters_78276127, curverFunc_82781);
+        
+        return keyData_27818;
     }
 
     public bool elipticCurveSignratureAlgorythmSupported_2819(ElipticCurveparameters elipticCurveParameters_2818){
