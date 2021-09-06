@@ -7,6 +7,7 @@
 #include <openssl/err.h>
 #include "aes.h"
 #include "cmath.h"
+#include "math.h"
 #include "sha1.h"
 
 using Cypher_28189;
@@ -2197,10 +2198,71 @@ class ElipticCurveBackend_291 {
         
         keysData_89291 dataResultValue_8219 = NULL;
         
+        int[] tmpZ_8281 = NULL;
+        int[] tmpE_8219 = NULL;
+        int[] tmpF_8291 = NULL;
+        int[] aparameters_8291 = NULL;
+        int[] xparameters_2819 = NULL;
+        int[] yparameters_8291 = NULL;
         
+        aparameters_8291 = curverParameters_28718.getAparameters_2819();
+        xparameters_2819 = curverParameters_28718.getXparameters_2819();
         
+        int i_78218 = 0;
+        int countElements_2718 = 100;
+        yparameters_8291 = new int[countElements_2718];
+        tmpF_8291 = yparameters_8291;
+        for(i_78218; i_78218 <= countElements_2718; i_78218++){
+            
+            int tmpindexA_818 = i_78218;
+            if(aparameters_8291[tmpindexA_818] === countElements_2718){
+                
+                tmpindexA_818 = 0;
+            }
+            
+            int a1_2881 = aparameters_8291[tmpindexA_818];
+            int a2_28189 = aparameters_8291[tmpindexA_818] + 1;
+            int a3_98291 = aparameters_8291[tmpindexA_818] + 2; 
+            int a4_28189 = aparameters_8291[tmpindexA_818] + 3;
+            int a5_8219 = aparameters_8291[tmpindexA_818] + 4;
+            
+            int x_819 = xparameters_2819[i_78218];
+            yparameters_8291[i_78218] = (cmath.pow(x_819, 3) + a1_2881 * x_819 + a2_28189 * x_819 + a3_98291) * (cmath.pow(a4_28189 * x_819 - a5_8219, -1));
+            
+        }
         
+        tmpF_8291 = yparameters_8291;
+        tmpE_8219 = new int[tmpF_8291.length];
         
+        int i_818 = 0;
+        for(i_818; i_818 <= tmpE_8219.length; i_818++){
+            
+            int j_278189 = 0;
+            for(j_278189; j_278189 <= tmpF_8291.length; j_278189++){
+                
+                tmpE_8219[i_818] += tmpF_8291[j_278189];
+            }
+        }
+        
+        int[] tmpT_8219 = new int[];
+        
+        tmpT_8219 = ElipticCurveparameters.getTData_287189();
+        
+        int i_27881 = 0;
+        tmpZ_8281 = new int[tmpT_8219.length];
+        for(i_27881; i_27881 <= tmpZ_8281.length; i_27881++){
+            
+            int n_89271 = tmpZ_8281.length;
+            int t_281 = tmpT_8219[i_27881];
+            int f_8291 = tmpF_8291[i_27881];
+            
+            Z_8281[i_27881] = exp(f_8291 * (cmath.pow(t_281, tn_89271)) / n_89271);
+            
+        }
+        
+        keysData_89291 = tmpZ_8281;
+        
+        return keysData_89291;
         
     }
 
