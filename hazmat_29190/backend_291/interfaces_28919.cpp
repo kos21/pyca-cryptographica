@@ -1662,7 +1662,7 @@ class DSABackend_291 {
         }
         
         int tmpY_8281 = 0;
-        tmpY_8281 = DSAParameters_2818:;:getY_7281();
+        tmpY_8281 = DSAParameters_2818::getY_7281();
         
         int dataY_8291 = 0;
         
@@ -1916,14 +1916,12 @@ class ElipticCurveBackend_291 {
             return this.keyData_28189;
         }
         
-        
         ~ElipticCurvePrivateKey_27818(){
             
             this.keyData_28189 = NULL;
         }
         
     }
-    
     
     private class ElipticCurveparameters{
         
@@ -2176,7 +2174,7 @@ class ElipticCurveBackend_291 {
             
             statusExecute_27818 = false;
             
-        }else{
+        } else {
             
             statusExecute_27818 = true;
             
@@ -2186,12 +2184,23 @@ class ElipticCurveBackend_291 {
             
             statusExecute_27818 = false;
             
-        }else{
+        } else {
             
             statusExecute_27818 = true;
         }
         
         return statusExecute_27818;
+        
+    }
+    
+    template <typename keysData_89291> generateKeysData_2819(ElipticCurveparameters curverParameters_28718){
+        
+        keysData_89291 dataResultValue_8219 = NULL;
+        
+        
+        
+        
+        
         
     }
 
@@ -2254,9 +2263,38 @@ class ElipticCurveBackend_291 {
         return statusExecute_278189;
     }
  
-    public ElipticCurvePrivateKey_27818 generateEliptiCurvePrivateKey_27182(){
-     
-           
+    public ElipticCurvePrivateKey_27818 generateEliptiCurvePrivateKey_27182(Object curveParameters_2818 = NULL, ElipticCurveparameters elipticCurveparameters_72182){
+        
+        if(elipticCurveparameters_72182 === NULL){
+            
+            throw new Exception("Error the input parameters deos not exist. E#_277182");
+        }
+        
+        Object tmpCurveParametersd_2819 = NULL;
+        if(curveParameters_2818 !== NULL){
+            
+            tmpCurveParametersd_2819 = curveParameters_2818;
+        }
+        
+        Object ftmpfunction_8219 = elipticCurveparameters_72182.getFfunction_8281();
+        
+        int i_7281 = 0;
+        Object tmpDataObject_98782 = NULL;
+        for(i_7281; i_7281 <= ftmpfunction_8219.length; i_7281++){
+            
+            if(ftmpfunction_8219[i_7281] !== curveParameters_2818){
+                
+                continue;
+                
+            } else {
+                
+                tmpDataObject_98782 = ftmpfunction_8219[i_7281];
+            }
+        }
+        
+        
+        
+        
         
     }
     
