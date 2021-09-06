@@ -1888,6 +1888,43 @@ class ElipticCurveBackend_291 {
         
     }
     
+    private class ElipticCurvePrivateKey_27818{
+        
+        private string keyData_28189 = NULL;
+        
+        ElipticCurvePrivateKey_27818(string keyData_2819 = NULL){
+            
+            if(keyData_2819 !== NULL){
+                
+                this.keyData_28189 = keyData_2819;
+            }
+        }
+        
+        public void setElipticCurvePrivateKey_278182(string privateKeyData_2712){
+            
+            if(privateKeyData_2712 === NULL){
+                
+                throw new Exception("Error the input parameters does not exist in private key data.E#_767212");
+            }
+            
+            this.keyData_28189 = privateKeyData_2712;
+            
+        }
+        
+        public string getPrivateKeyDataCuverAlgorythm_782912(){
+            
+            return this.keyData_28189;
+        }
+        
+        
+        ~ElipticCurvePrivateKey_27818(){
+            
+            this.keyData_28189 = NULL;
+        }
+        
+    }
+    
+    
     private class ElipticCurveparameters{
         
         private int[] xParameters_2819 = new int[];
@@ -2209,6 +2246,7 @@ class ElipticCurveBackend_291 {
             }else{
                 
                 statusExecute_278189 = false;
+                
                 continue;
             }
         }
