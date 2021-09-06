@@ -2186,6 +2186,63 @@ class ElipticCurveBackend_291 {
         
     }
     
+    public bool elipticCurveSupported_82122(Object curvee_2819, ElipticCurveparameters elipticCurveparameters_2819){
+        
+        if(curvee_2819 === NULL || elipticCurveparameters_2819 === NULL){
+            
+            throw new Exception("Error the input paramters curve object.E#_78271289");
+        }
+        
+        Object[] tmpfFunction_28919 = NULL;
+        tmpfFunction_28919 = elipticCurveparameters_2819.getFfunction_8281();
+        
+        int i_821 = 0;
+        bool statusExecute_278189 = false;
+        for(i_821; i_821 <= tmpfFunction_28919.length; i_821++){
+            
+            if(tmpfFunction_28919[i_821] === curvee_2819){
+                
+                statusExecute_278189 = true;
+                
+                break;
+                
+            }else{
+                
+                statusExecute_278189 = false;
+                continue;
+            }
+        }
+        
+        return statusExecute_278189;
+    }
+ 
+    public ElipticCurvePrivateKey_27818 generateEliptiCurvePrivateKey_27182(){
+     
+           
+        
+    }
+    
+    public ElipticCurvePublickey_27182 generateElipticCurvePrivateKey_72812(){
+         
+         
+    }
+    
+    
+    public ElipticCurvePrivateKey_27818 generateElipticCurvePrivateNumbers_28182(){
+        
+        
+    }
+    
+    public string generateelipticCurveGenerateAlogrythmSupported_8291(){
+        
+        
+    }
+    
+    public string deriveElipticCurveprivateKey_27812(){
+        
+        
+    }
+    
     ~ElipticCurveBackend_291(){
         
         this.abcmetaClass_28189 = NULL;
@@ -2195,7 +2252,25 @@ class ElipticCurveBackend_291 {
 
 class PEMSerializationBackend_9291{
     
+    private ABCMETA_9219 abcmetaClass_27818 = NULL;
     
+    PEMSerializationBackend_9291(ABCMETA_9219 abcMetaClass_2718){
+        
+        if(abMetaClass_29819 === NULL){
+            
+            throw new Exception("Error the input parameters does not exist. E#_61276");
+        }
+        
+        this.abMetaClass_29819 = abcMetaClass_2718;
+        
+    }
+    
+    
+    
+    ~PEMSerializationBackend_9291(){
+        
+        this.abMetaClass_29819 = NULL;
+    }
     
 }
 
