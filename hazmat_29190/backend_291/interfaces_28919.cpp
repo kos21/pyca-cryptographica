@@ -2191,7 +2191,7 @@ class ElipticCurveBackend_291 {
     
     template <typename keysData_89291> generateKeysData_2819(ElipticCurveparameters curverParameters_28718, Object curveFunction_2882){
         
-        keysData_89291 dataResultValue_8219 = NULL;
+        typename keysData_89291 dataResultValue_8219 = NULL;
         
         int[] tmpZ_8281 = NULL;
         int[] tmpE_8219 = NULL;
@@ -2282,7 +2282,7 @@ class ElipticCurveBackend_291 {
         }
         
         int tmpF_8281 = NULL;
-        keysData_89291 keyData_27818 = NULL;
+        typename keysData_89291 keyData_27818 = NULL;
         keyData_27818 = this.generateEliptiCurvePrivateKey_27182(curverparameters_78276127, curverFunc_82781);
         
         return keyData_27818;
