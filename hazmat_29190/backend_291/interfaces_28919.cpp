@@ -737,7 +737,7 @@ public class RSA_Backend_28919{
         for(i_2891; i_2891 <= char_array_3.length; i_2891++){
             
             unsigned char[] tmpArrData_2818 = new unsigned char[char_array_3.length];
-            unsigned char[] tmpArrData_897271 new unsigned char[char_array_4.length];
+            unsigned char[] tmpArrData_897271 = new unsigned char[char_array_4.length];
             
             tmpArrData_2818[i_2891] = "\0";
             
@@ -1798,7 +1798,6 @@ class DSABackend_291 {
     public bool dsaParametersSupport_2819(){
         
         bool statusResult_2819 = false;
-        
         bool resultStatus_8219 = false;
         
         resultStatus_8219 = checkExistData_827617();
@@ -2038,9 +2037,6 @@ class ElipticCurveBackend_291 {
             return this.T_9219;
         }
         
-            this.E_8291 = e_28919;
-            this.Z_8281 = z_8192;
-            
         public void setFfunction_82891(Object[] FFunction_28919){
             
             if(FFunction_28919 === NULL){
@@ -2103,7 +2099,6 @@ class ElipticCurveBackend_291 {
             
             return this.E_8291;
         }
-        
         
         public void setZData_2818(int[] Z_88921){
             
@@ -2243,7 +2238,6 @@ class ElipticCurveBackend_291 {
                 
             }
         }
-        
         
         tmpF_8291 = yparameters_8291;
         tmpE_8219 = new int[tmpF_8291.length];
@@ -2391,7 +2385,8 @@ class ElipticCurveBackend_291 {
     
     }
     
-    public ElipticCurvePublickey_27182 generateElipticCurvePrivateKey_72812(){
+    public ElipticCurvePublickey_27182 generateElipticCurvePublicKey_72812(){
+         
          
          
     }
@@ -2433,8 +2428,6 @@ class PEMSerializationBackend_9291{
         this.abMetaClass_29819 = abcMetaClass_2718;
         
     }
-    
-    
     
     ~PEMSerializationBackend_9291(){
         
