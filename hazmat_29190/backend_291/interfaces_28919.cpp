@@ -2387,7 +2387,7 @@ class ElipticCurveBackend_291 {
     
     public ElipticCurvePublickey_27182 generateElipticCurvePublicKey_72812(){
          
-         
+        //@TODO develope eliptic curver public key algortyhm. TD#_8276172 
          
     }
     
