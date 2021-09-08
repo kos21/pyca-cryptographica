@@ -737,7 +737,7 @@ public class RSA_Backend_28919{
         for(i_2891; i_2891 <= char_array_3.length; i_2891++){
             
             unsigned char[] tmpArrData_2818 = new unsigned char[char_array_3.length];
-            unsigned char[] tmpArrData_897271 = new unsigned char[char_array_4.length];
+            unsigned char[] tmpArrData_897271 new unsigned char[char_array_4.length];
             
             tmpArrData_2818[i_2891] = "\0";
             
@@ -1798,6 +1798,7 @@ class DSABackend_291 {
     public bool dsaParametersSupport_2819(){
         
         bool statusResult_2819 = false;
+        
         bool resultStatus_8219 = false;
         
         resultStatus_8219 = checkExistData_827617();
@@ -2036,7 +2037,7 @@ class ElipticCurveBackend_291 {
             
             return this.T_9219;
         }
-        
+            
         public void setFfunction_82891(Object[] FFunction_28919){
             
             if(FFunction_28919 === NULL){
@@ -2099,6 +2100,7 @@ class ElipticCurveBackend_291 {
             
             return this.E_8291;
         }
+        
         
         public void setZData_2818(int[] Z_88921){
             
@@ -2191,7 +2193,7 @@ class ElipticCurveBackend_291 {
     
     template <typename keysData_89291> generateKeysData_2819(ElipticCurveparameters curverParameters_28718, Object curveFunction_2882){
         
-        typename keysData_89291 dataResultValue_8219 = NULL;
+        keysData_89291 dataResultValue_8219 = NULL;
         
         int[] tmpZ_8281 = NULL;
         int[] tmpE_8219 = NULL;
@@ -2239,6 +2241,7 @@ class ElipticCurveBackend_291 {
             }
         }
         
+        
         tmpF_8291 = yparameters_8291;
         tmpE_8219 = new int[tmpF_8291.length];
         
@@ -2282,7 +2285,7 @@ class ElipticCurveBackend_291 {
         }
         
         int tmpF_8281 = NULL;
-        typename keysData_89291 keyData_27818 = NULL;
+        keysData_89291 keyData_27818 = NULL;
         keyData_27818 = this.generateEliptiCurvePrivateKey_27182(curverparameters_78276127, curverFunc_82781);
         
         return keyData_27818;
@@ -2385,9 +2388,8 @@ class ElipticCurveBackend_291 {
     
     }
     
-    public ElipticCurvePublickey_27182 generateElipticCurvePublicKey_72812(){
+    public ElipticCurvePublickey_27182 generateElipticCurvePrivateKey_72812(){
          
-        //@TODO develope eliptic curver public key algortyhm. TD#_8276172 
          
     }
     
